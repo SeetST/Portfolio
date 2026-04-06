@@ -23,6 +23,19 @@ Contributed to the in-house design system, standardizing components across key p
       if(heroHalo) heroHalo.classList.remove('is-loaded');
     }
 
+    function retriggerHeroText(){
+      var texts = document.querySelectorAll('#about .slice-reveal__text');
+      texts.forEach(function(node){
+        node.style.animation = 'none';
+      });
+      // force reflow so browser restarts keyframes
+      void document.body.offsetHeight;
+      texts.forEach(function(node){
+        node.style.animation = '';
+      });
+    }
+
+    retriggerHeroText();
     showHero();
     if(heroImg && !heroImg.complete){
       heroImg.addEventListener('load', showHero, { once: true });
@@ -37,10 +50,14 @@ Contributed to the in-house design system, standardizing components across key p
             if(heroSeen){
               hideHero();
               requestAnimationFrame(function(){
-                requestAnimationFrame(showHero);
+                requestAnimationFrame(function(){
+                  showHero();
+                  retriggerHeroText();
+                });
               });
             } else {
               showHero();
+              retriggerHeroText();
               heroSeen = true;
             }
           }
