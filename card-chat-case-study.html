@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Card AI Chat Case Study</title>
+<meta name="description" content="Case study for reimagining the credit card listing page as an AI chat experience."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --color-neutral: #e3e3de;
+    --color-neutral-variant: #f8f8f0;
+    --color-secondary: #333333;
+    --color-tertiary: #e1c78f;
+    --color-primary: #74672b;
+    --color-primary-brown-200: #e3e1d5;
+    --color-primary-brown-300: #cecab5;
+    --color-primary-brown-600: #685d27;
+    --color-ink: #2b3437;
+    --color-muted: #586064;
+    --color-divider-warm: #aca480;
+    --border-soft-dark: rgba(171, 179, 183, 0.2);
+    --border-soft-dark-2: rgba(171, 179, 183, 0.15);
+    --surface-glass-dark: rgba(255, 255, 255, 0.05);
+    --radius-card: 16px;
+    --radius-section: 26px;
+    --radius-pill: 9999px;
+    --page-max-width: 1280px;
+    --page-padding-x: 32px;
+    --section-padding-y: 84px;
+    --shadow-card: 0 20px 40px rgba(51, 51, 51, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Google Sans Flex", sans-serif;
+    background: var(--color-neutral-variant);
+    color: var(--color-secondary);
+    overflow-x: hidden;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .page-shell {
+    width: 100%;
+    background: var(--color-neutral-variant);
+  }
+
+  .page-section {
+    padding: var(--section-padding-y) var(--page-padding-x);
+  }
+
+  .page-section__inner {
+    width: min(100%, var(--page-max-width));
+    margin: 0 auto;
+  }
+
+  .page-section--dark {
+    background: var(--color-secondary);
+    border-radius: var(--radius-section);
+    color: var(--color-neutral-variant);
+  }
+
+  .eyebrow,
+  .minor-heading,
+  .chip,
+  .pill-button__label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  .eyebrow,
+  .minor-heading {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .eyebrow {
+    color: var(--color-secondary);
+  }
+
+  .eyebrow--accent {
+    color: var(--color-tertiary);
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+
+  .section-title--light {
+    color: var(--color-neutral-variant);
+  }
+
+  .hero-title {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title__accent {
+    color: var(--color-primary);
+  }
+
+  .lead,
+  .body-copy,
+  .body-copy--light,
+  .body-copy--accent {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    overflow-wrap: anywhere;
+  }
+
+  .lead {
+    color: var(--color-muted);
+  }
+
+  .body-copy {
+    color: var(--color-secondary);
+  }
+
+  .body-copy--light {
+    color: var(--color-neutral-variant);
+  }
+
+  .body-copy--accent {
+    color: var(--color-tertiary);
+  }
+
+  .quote-text {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--color-primary);
+    overflow-wrap: anywhere;
+  }
+
+  .tension-quote {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+    color: var(--color-neutral-variant);
+    overflow-wrap: anywhere;
+  }
+
+  .tension-quote__accent {
+    color: var(--color-tertiary);
+  }
+
+  .case-card-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+
+  .minor-heading {
+    color: var(--color-secondary);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 0 12px;
+    border-radius: var(--radius-pill);
+    background: var(--color-neutral);
+    color: var(--color-ink);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .pill-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border: 1px solid rgba(51, 51, 51, 0.08);
+    border-radius: var(--radius-pill);
+    background: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .pill-button__label {
+    color: var(--color-secondary);
+  }
+
+  .info-card,
+  .glass-card {
+    border-radius: var(--radius-card);
+  }
+
+  .info-card {
+    padding: 40px;
+  }
+
+  .info-card--warm {
+    background: var(--color-primary-brown-200);
+  }
+
+  .info-card--gold {
+    background: var(--color-tertiary);
+  }
+
+  .glass-card {
+    background: var(--surface-glass-dark);
+    border: 1px solid var(--border-soft-dark-2);
+    padding: 32px;
+  }
+
+  .rule {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    background: var(--color-divider-warm);
+    opacity: 0.4;
+  }
+
+  .rule--dark {
+    background: var(--border-soft-dark);
+    opacity: 1;
+  }
+
+  .hero-grid,
+  .tension-grid,
+  .vision-grid,
+  .outcome-grid {
+    display: grid;
+    gap: 32px;
+  }
+
+  .hero-grid > *,
+  .tension-grid > *,
+  .overview-grid > *,
+  .vision-grid > *,
+  .role-grid > *,
+  .process-grid > *,
+  .decision-grid > *,
+  .decision-row > *,
+  .advantage-grid > *,
+  .proof-grid > *,
+  .outcome-grid > *,
+  .capability-grid > *,
+  .closing-proof-grid > * {
+    min-width: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    align-items: end;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 56px;
+    text-decoration: none;
+    color: var(--color-secondary);
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .hero-meta {
+    display: grid;
+    gap: 16px;
+    align-self: center;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 8px;
+  }
+
+  .tension-grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+  }
+
+  .tension-banner-section {
+    border-radius: 0;
+  }
+
+  .overview-grid,
+  .role-grid,
+  .process-grid,
+  .decision-grid,
+  .advantage-grid,
+  .proof-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-panel {
+    min-height: 395px;
+    padding: 40px;
+    border-radius: var(--radius-card);
+  }
+
+  .overview-panel--user {
+    background: var(--color-primary-brown-200);
+  }
+
+  .overview-panel--business {
+    background: var(--color-tertiary);
+  }
+
+  .overview-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .overview-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-neutral-variant);
+  }
+
+  .overview-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .overview-stack {
+    display: grid;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .overview-stack--spacious {
+    gap: 16px;
+  }
+
+  .overview-divider {
+    height: 1px;
+    margin: 32px 0;
+    background: var(--color-divider-warm);
+    opacity: 0.4;
+  }
+
+  .overview-row-rule {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(172, 164, 128, 0.68);
+  }
+
+  .overview-row-rule:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .overview-body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .overview-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .overview-list li {
+    position: relative;
+    padding-left: 24px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .overview-list--dash li::before,
+  .overview-list--arrow li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-primary);
+  }
+
+  .overview-list--dash li::before {
+    content: "–";
+  }
+
+  .overview-list--arrow li::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url("./figma-assets/diagonal-arrow.svg") center / 14px 14px no-repeat;
+    top: 4px;
+  }
+
+  .bullet-list,
+  .check-list,
+  .arrow-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bullet-list li,
+  .check-list li,
+  .arrow-list li {
+    position: relative;
+    padding-left: 26px;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-muted);
+  }
+
+  .bullet-list li + li,
+  .check-list li + li,
+  .arrow-list li + li {
+    margin-top: 12px;
+  }
+
+  .bullet-list li::before,
+  .check-list li::before,
+  .arrow-list li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .bullet-list li::before {
+    content: "•";
+  }
+
+  .check-list li::before {
+    content: "✓";
+  }
+
+  .arrow-list li::before {
+    content: "→";
+  }
+
+  .vision-grid {
+    grid-template-columns: 496px minmax(0, 1fr);
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .quote-callout {
+    margin-top: 32px;
+    padding-left: 26px;
+    border-left: 2px solid var(--color-divider-warm);
+  }
+
+  .role-grid {
+    grid-template-columns: 408px minmax(0, 832px);
+    align-items: start;
+    gap: 40px;
+  }
+
+  .capability-grid,
+  .advantage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .capability-card,
+  .advantage-card {
+    border: 1px solid rgba(51, 51, 51, 0.08);
+    border-radius: var(--radius-card);
+    background: #ffffff;
+    padding: 24px;
+  }
+
+  .vision-section {
+    background: var(--color-primary-brown-200);
+  }
+
+  .vision-copy {
+    max-width: 720px;
+    display: grid;
+    gap: 32px;
+    align-content: center;
+    min-height: 200px;
+  }
+
+  .vision-copy .lead {
+    color: var(--color-muted);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .role-panel {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+    max-width: 408px;
+  }
+
+  .constraints-block {
+    margin-top: 10px;
+  }
+
+  .constraints-label {
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    letter-spacing: 0.03em;
+  }
+
+  .constraints-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .constraints-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .constraints-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-divider-warm);
+  }
+
+  .capability-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 408px));
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .capability-card {
+    min-height: 132px;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    padding: 24px;
+  }
+
+  .capability-copy {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .problem-framing-section {
+    background: var(--color-primary-brown-200);
+  }
+
+  .problem-framing-hero {
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .problem-framing-intro {
+    display: grid;
+    gap: 18px;
+    max-width: 460px;
+  }
+
+  .problem-framing-question-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    padding-top: 20px;
+  }
+
+  .framing-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(116, 103, 43, 0.14);
+    color: var(--color-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    width: fit-content;
+  }
+
+  .framing-pill__icon {
+    color: var(--color-primary-brown-600);
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .framing-question {
+    display: grid;
+    gap: 16px;
+  }
+
+  .framing-question__text {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+
+  .framing-arrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 44px;
+    color: var(--color-divider-warm);
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .force-kicker {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .force-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .force-card {
+    border-radius: var(--radius-card);
+    background: #ffffff;
+    border: 1px solid rgba(51, 51, 51, 0.06);
+    padding: 28px 30px 30px;
+    min-height: 346px;
+  }
+
+  .force-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .force-card__icon {
+    width: 22px;
+    height: 22px;
+    color: var(--color-secondary);
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+
+  .force-card__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--color-ink);
+  }
+
+  .force-card__layer {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .force-card__body {
+    display: grid;
+    gap: 6px;
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(172, 164, 128, 0.42);
+  }
+
+  .force-card__body p,
+  .force-card__body li {
+    margin: 0;
+    font-size: 17px;
+    line-height: 28px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .force-card__label {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .force-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+
+  .tension-banner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 30px;
+    padding: 24px 38px;
+    border-radius: 18px;
+    background: var(--color-secondary);
+    color: var(--color-neutral-variant);
+  }
+
+  .tension-banner__label {
+    margin: 0;
+    color: var(--color-tertiary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+
+  .tension-banner__body {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--color-neutral-variant);
+  }
+
+  .behavioral-insights {
+    margin-top: 44px;
+  }
+
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .insight-column {
+    padding-top: 18px;
+    border-top: 2px solid var(--color-primary);
+  }
+
+  .insight-column .case-card-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .insight-stack {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .insight-label {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .insight-copy {
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--color-secondary);
+    overflow-wrap: anywhere;
+  }
+
+  .compare-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .compare-mini-item {
+    display: grid;
+    gap: 8px;
+  }
+
+  .compare-mini-card {
+    position: relative;
+    min-height: 104px;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 12px 10px 10px;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 14px;
+  }
+
+  .compare-mini-card::before,
+  .compare-mini-card::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .compare-mini-card::before {
+    width: 72px;
+    height: 72px;
+    right: -16px;
+    bottom: -18px;
+  }
+
+  .compare-mini-card::after {
+    width: 48px;
+    height: 48px;
+    right: 28px;
+    bottom: 12px;
+  }
+
+  .compare-mini-card--a {
+    background: #4a5c5f;
+  }
+
+  .compare-mini-card--b {
+    background: #8e8345;
+  }
+
+  .compare-mini-card--c {
+    background: #4f4f51;
+  }
+
+  .compare-mini-card__chip {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 18px;
+    height: 12px;
+    border-radius: 4px;
+    background: #dbc98a;
+  }
+
+  .compare-mini-card__label {
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+  }
+
+  .selected-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 14px;
+    padding: 0;
+    color: var(--color-primary);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .selected-pill__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-neutral-variant);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7px;
+    line-height: 1;
+  }
+
+  .compare-mini-footnote {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--color-primary);
+  }
+
+  .trust-lines {
+    margin-top: 2px;
+    border-top: 1px solid rgba(172, 164, 128, 0.42);
+  }
+
+  .trust-line {
+    margin: 0;
+    padding: 12px 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-secondary);
+    border-bottom: 1px solid rgba(172, 164, 128, 0.42);
+  }
+
+  .trust-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    color: var(--color-neutral-variant);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    width: fit-content;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .process-card {
+    padding-top: 24px;
+    border-top: 1px solid rgba(116, 103, 43, 0.28);
+  }
+
+  .process-card__stack {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .decision-engine-intro {
+    max-width: 900px;
+  }
+
+  .decision-engine-intro .lead {
+    max-width: 760px;
+  }
+
+  .system-flow-panel,
+  .interaction-board {
+    margin-top: 40px;
+    padding: 28px;
+    border-radius: 22px;
+    border: 1px solid rgba(172, 164, 128, 0.28);
+    background: rgba(255, 255, 255, 0.52);
+  }
+
+  .system-flow-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--color-ink);
+  }
+
+  .system-flow-image {
+    margin: 22px 0 0;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
+  .system-flow-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .quote-callout--decision-engine {
+    margin-top: 40px;
+  }
+
+  .quote-callout--decision-engine .quote-text {
+    color: var(--color-primary);
+  }
+
+  .interaction-heading {
+    margin-top: 40px;
+  }
+
+  .interaction-board {
+    background: rgba(244, 247, 252, 0.72);
+  }
+
+  .interaction-shot {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(51, 51, 51, 0.08);
+  }
+
+  .interaction-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .interface-design-section {
+    background: var(--color-primary-brown-200);
+  }
+
+  .decision-board {
+    padding: 0;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .interface-hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .proof-image-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow:
+      0 18px 28px rgba(51, 51, 51, 0.08),
+      0 3px 10px rgba(51, 51, 51, 0.05);
+  }
+
+  .proof-image-card--offset {
+    margin-top: 0;
+  }
+
+  .proof-image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .decision-grid {
+    margin-top: 38px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .decision-row {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 390px) 224px;
+    gap: 32px;
+    align-items: start;
+    padding: 28px 26px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 1px 0 rgba(51, 51, 51, 0.03);
+  }
+
+  .decision-number {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .decision-number__value {
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-primary);
+  }
+
+  .decision-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(51, 51, 51, 0.08);
+    color: var(--color-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+
+  .decision-copy {
+    margin: 12px 0 0;
+    font-size: 17px;
+    line-height: 30px;
+    color: var(--color-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .decision-detail {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+    min-height: 100%;
+  }
+
+  .decision-detail--checks {
+    padding-top: 4px;
+  }
+
+  .decision-check-list li {
+    color: var(--color-muted);
+    font-size: 18px;
+    line-height: 30px;
+    padding-left: 20px;
+  }
+
+  .decision-check-list li + li {
+    margin-top: 10px;
+  }
+
+  .decision-check-list li::before {
+    color: var(--color-primary);
+    font-size: 14px;
+    top: 3px;
+  }
+
+  .decision-detail-stack {
+    display: grid;
+    gap: 18px;
+    padding-top: 4px;
+  }
+
+  .decision-detail-block {
+    border-left: 2px solid var(--color-primary);
+    padding-left: 16px;
+  }
+
+  .decision-detail-label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .decision-detail-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--color-secondary);
+  }
+
+  .decision-detail-text {
+    margin: 4px 0 0;
+    font-size: 17px;
+    line-height: 28px;
+    color: var(--color-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .decision-detail--empty {
+    min-height: 1px;
+  }
+
+  .decision-takeaway {
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    padding-left: 20px;
+    border-left: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .decision-takeaway__arrow {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  .decision-takeaway__text {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--color-primary);
+  }
+
+  .outcome-grid {
+    grid-template-columns: 395px minmax(0, 1fr);
+  }
+
+  .outcome-section {
+    border-radius: var(--radius-section) var(--radius-section) 0 0;
+  }
+
+  .outcome-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .outcome-list li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+    padding: 12px 0;
+    color: var(--color-neutral);
+  }
+
+  .outcome-list li:first-child {
+    padding-top: 0;
+  }
+
+  .outcome-list li:last-child {
+    padding-bottom: 0;
+  }
+
+  .outcome-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: var(--color-tertiary);
+  }
+
+  .outcome-check svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+
+  .outcome-text {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--color-neutral);
+  }
+
+  .closing-panel {
+    margin-top: 32px;
+  }
+
+  .closing-proof {
+    margin-top: 24px;
+    padding: 48px;
+    border-radius: var(--radius-card);
+    background: rgba(255, 255, 255, 0.05);
+    display: grid;
+    gap: 32px;
+  }
+
+  .closing-quote {
+    max-width: 860px;
+    color: var(--color-tertiary);
+  }
+
+  .closing-proof-content {
+    display: grid;
+    gap: 20px;
+  }
+
+  .closing-proof-label {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--color-tertiary);
+  }
+
+  .closing-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 54px;
+  }
+
+  .closing-proof-item {
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  .closing-proof-arrow {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--color-tertiary);
+  }
+
+  .closing-proof-text {
+    margin: 0;
+    font-family: "Inter", "Google Sans Flex", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--color-neutral-variant);
+  }
+
+  .footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-grid,
+    .tension-grid,
+    .vision-grid,
+    .role-grid,
+    .problem-framing-hero,
+    .outcome-grid,
+    .proof-grid,
+    .decision-row {
+      grid-template-columns: 1fr;
+    }
+
+    .interface-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-meta {
+      max-width: 540px;
+    }
+
+    .vision-copy {
+      min-height: auto;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .problem-framing-question-grid,
+    .force-grid,
+    .insights-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .force-card {
+      min-height: auto;
+    }
+
+    .framing-arrow {
+      justify-content: flex-start;
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --page-padding-x: 20px;
+      --section-padding-y: 56px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    .overview-grid,
+    .capability-grid,
+    .advantage-grid,
+    .force-grid,
+    .insights-grid,
+    .process-grid,
+    .closing-proof-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .overview-panel,
+    .info-card,
+    .force-card,
+    .glass-card,
+    .decision-board,
+    .closing-proof,
+    .system-flow-panel,
+    .interaction-board {
+      padding: 24px;
+    }
+
+    .interaction-board {
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .interaction-shot {
+      margin-left: calc(-1 * var(--page-padding-x));
+      margin-right: calc(-1 * var(--page-padding-x));
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .back-link {
+      margin-bottom: 40px;
+    }
+
+    .role-grid {
+      gap: 32px;
+    }
+
+    .decision-row {
+      gap: 20px;
+      padding: 24px 0;
+    }
+
+    .decision-row {
+      padding: 24px;
+    }
+
+    .decision-takeaway {
+      grid-template-columns: 12px minmax(0, 1fr);
+      padding-left: 16px;
+    }
+
+    .problem-framing-question-grid,
+    .selected-row {
+      grid-template-columns: 1fr;
+    }
+
+    .tension-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 22px 24px;
+    }
+
+    .outcome-list li {
+      grid-template-columns: 24px minmax(0, 1fr);
+      gap: 16px;
+      padding: 0 0 16px;
+    }
+
+    .outcome-list li:last-child {
+      padding-bottom: 0;
+    }
+
+    .outcome-check,
+    .outcome-check svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .outcome-text {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    .closing-proof {
+      padding: 32px 24px;
+    }
+
+    .closing-quote {
+      max-width: none;
+    }
+
+    .closing-panel .quote-text {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .closing-proof-label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .closing-proof-grid {
+      gap: 12px;
+    }
+
+    .closing-proof-item {
+      grid-template-columns: 14px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .closing-proof-text {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .footer-actions {
+      margin-top: 32px;
+    }
+
+    .footer-actions .pill-button {
+      padding: 10px 20px;
+    }
+
+    .footer-actions .pill-button__label {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .compare-mini-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 2px;
+      align-items: start;
+    }
+
+    .compare-mini-item {
+      gap: 6px;
+    }
+
+    .compare-mini-card {
+      min-height: 68.703px;
+      padding: 0;
+      align-items: stretch;
+      font-size: 7px;
+      font-weight: 600;
+      line-height: 10.5px;
+      letter-spacing: 0.175px;
+    }
+
+    .compare-mini-card::before {
+      width: 48px;
+      height: 48px;
+      right: -8px;
+      top: -24px;
+      bottom: auto;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .compare-mini-card::after {
+      width: 56px;
+      height: 56px;
+      right: -4px;
+      bottom: -4px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .compare-mini-card--a {
+      background: linear-gradient(135deg, rgb(43 52 55) 0%, rgb(71 99 99) 100%);
+    }
+
+    .compare-mini-card--b {
+      background: linear-gradient(135deg, rgb(116 103 43) 0%, rgb(172 164 128) 100%);
+    }
+
+    .compare-mini-card--c {
+      background: linear-gradient(135deg, rgb(61 53 48) 0%, rgb(88 96 100) 100%);
+    }
+
+    .compare-mini-card__chip {
+      top: 8px;
+      left: 8px;
+      width: 16px;
+      height: 12px;
+    }
+
+    .compare-mini-card__label {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      margin-left: 0;
+      font-family: "Inter", "Google Sans Flex", sans-serif;
+      font-size: 7px;
+      font-weight: 600;
+      line-height: 10.5px;
+      letter-spacing: 0.175px;
+    }
+
+    .selected-pill {
+      justify-self: center;
+      min-height: 16px;
+      padding: 0;
+      gap: 4px;
+      background: transparent;
+      color: var(--color-primary);
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+    }
+
+    .selected-pill__dot {
+      width: 14px;
+      height: 14px;
+      padding-inline: 2px;
+      font-size: 7px;
+      background: var(--color-primary);
+      color: var(--color-neutral-variant);
+    }
+
+    .compare-mini-footnote {
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+      color: var(--color-primary);
+    }
+  }
+</style>
+</head>
+<body>
+<main id="top" class="page-shell">
+  <section class="page-section">
+    <div class="page-section__inner hero-grid">
+      <div class="hero-copy">
+        <a class="back-link" href="./index.html">
+          <span aria-hidden="true">←</span>
+          <span>Back to Portfolio</span>
+        </a>
+        <p class="eyebrow">Case Study · Personal Finance</p>
+        <h1 class="hero-title" style="margin-top: 16px;">
+          <span class="hero-title__accent">Reimagining the Credit Card Listing Page</span>
+          as an AI Chat Experience
+        </h1>
+        <p class="body-copy" style="margin-top: 16px;">From Proof of Concept to MVP Pilot</p>
+      </div>
+      <aside class="hero-meta">
+        <p class="lead" style="padding-left: 24px; border-left: 2px solid var(--color-divider-warm);">
+          Led as primary product designer alongside Head of Product to reframe a static credit card listing into a guided AI-supported decision experience.
+        </p>
+        <div class="chips">
+          <span class="chip">AI Experience</span>
+          <span class="chip">Content Modelling</span>
+          <span class="chip">Interaction Design</span>
+          <span class="chip">MVP Pilot</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section page-section--dark tension-banner-section" style="padding-top: 56px; padding-bottom: 56px;">
+    <div class="page-section__inner tension-grid">
+      <h3 class="tension-quote">
+        <span class="tension-quote__accent">"The experience is optimized for exposure,</span><br>
+        <span>while users are trying to make a confident decision."</span>
+      </h3>
+      <div>
+        <p class="eyebrow eyebrow--accent">Core Problem</p>
+        <p class="body-copy--light" style="margin-top: 12px;">
+          Listing pages are built to maximize visibility and monetization, not to help people understand tradeoffs, refine intent, or trust what they choose.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="page-section__inner">
+      <p class="eyebrow">Overview</p>
+      <h2 class="section-title" style="margin-top: 12px;">From Listing Page to Decision Experience</h2>
+      <div class="overview-grid" style="margin-top: 32px;">
+        <article class="overview-panel overview-panel--user">
+          <div class="overview-label">
+            <span class="overview-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 8a2.75 2.75 0 1 0 0-5.5A2.75 2.75 0 0 0 8 8Zm0 1.5c-2.62 0-4.75 1.73-4.75 3.86 0 .35.28.64.63.64h8.24c.35 0 .63-.29.63-.64C12.75 11.23 10.62 9.5 8 9.5Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <p class="minor-heading">User Reality</p>
+          </div>
+          <div class="overview-stack">
+            <p class="minor-heading">Users arrive with</p>
+            <ul class="overview-list overview-list--dash">
+              <li>Clear intent — "best cashback card?"</li>
+              <li>Limited financial knowledge</li>
+            </ul>
+          </div>
+          <div class="overview-divider"></div>
+          <div class="overview-stack">
+            <p class="minor-heading">Forced to compare dozens of cards → leading to</p>
+            <ul class="overview-list overview-list--arrow">
+              <li>Choice paralysis → drop-offs</li>
+              <li>Suboptimal decisions → low satisfaction, churn</li>
+            </ul>
+          </div>
+        </article>
+        <article class="overview-panel overview-panel--business">
+          <div class="overview-label">
+            <span class="overview-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.75 3.25V2.5c0-.69.56-1.25 1.25-1.25h2c.69 0 1.25.56 1.25 1.25v.75h2.5c.69 0 1.25.56 1.25 1.25v2.11c0 .28-.18.53-.45.61l-1.8.57V6.75a.75.75 0 0 0-1.5 0v1.51l-2.94.93a1 1 0 0 1-.62 0L4.75 8.26V6.75a.75.75 0 0 0-1.5 0v1.04l-1.8-.57A.64.64 0 0 1 1 6.61V4.5c0-.69.56-1.25 1.25-1.25h2.5Zm3 0h-1.5V2.75h1.5v.5ZM1 8.54l2.25.71v.5a.75.75 0 0 0 1.5 0v-.03l2.5.79c.5.16 1.04.16 1.54 0l2.46-.78v.02a.75.75 0 0 0 1.5 0v-.49l2.25-.71v3.21c0 .69-.56 1.25-1.25 1.25H2.25C1.56 13 1 12.44 1 11.75V8.54Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <p class="minor-heading">Business Reality</p>
+          </div>
+          <div class="overview-stack overview-stack--spacious">
+            <p class="minor-heading">Competing Priorities</p>
+            <p class="overview-body overview-row-rule">Promote high-margin cards</p>
+            <p class="overview-body overview-row-rule">Visibility influenced by promotions and featured listings</p>
+            <p class="overview-body overview-row-rule">Complex product data difficult to simplify without losing accuracy</p>
+            <p class="overview-body">Maintain fairness and trust</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section vision-section">
+    <div class="page-section__inner">
+      <div class="vision-grid">
+        <div>
+          <p class="eyebrow">Project Vision</p>
+          <h2 class="section-title" style="margin-top: 12px;">Reframing the listing page as a decision system</h2>
+        </div>
+        <div class="vision-copy">
+          <p class="lead">
+            I reframed the credit card listing page into an AI-assisted decision system that guides users toward relevant options based on their needs and intent — augmenting the PLP with intelligence rather than replacing it.
+          </p>
+          <div class="quote-callout">
+            <p class="quote-text">Improving decision clarity is not just UX — it directly drives higher application completion and better card-user fit, reducing churn and mis-selling risk.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" style="margin: 32px 0;"/>
+
+      <div class="role-grid">
+        <div class="role-panel">
+          <p class="eyebrow">My Role</p>
+          <h2 class="section-title" style="margin-top: 12px;">Primary designer, end to end</h2>
+          <div class="constraints-block">
+            <p class="constraints-label">Working Within Constraints</p>
+            <ul class="constraints-list">
+              <li>No real AI backend (simulated logic)</li>
+              <li>Static product dataset</li>
+              <li>Limited personalization signals</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card">
+            <h3 class="case-card-title">AI Experience</h3>
+            <p class="capability-copy">How AI behaves within the product listing page</p>
+          </article>
+          <article class="capability-card">
+            <h3 class="case-card-title">Content &amp; System Modeling</h3>
+            <p class="capability-copy">Defining the "decision engine" — what the system knows and how it decides</p>
+          </article>
+          <article class="capability-card">
+            <h3 class="case-card-title">End-to-End Interaction Design</h3>
+            <p class="capability-copy">Search, listing, conversational guidance, and comparison</p>
+          </article>
+          <article class="capability-card">
+            <h3 class="case-card-title">MVP Pilot Framing</h3>
+            <p class="capability-copy">What to test and why — scoping validation around real behavior</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="page-section__inner">
+      <p class="eyebrow">Approach — Designing Under Constraints</p>
+      <h2 class="section-title" style="margin-top: 12px;">A lean, hypothesis-led process</h2>
+      <p class="lead" style="margin-top: 16px;">
+        Without upfront user research budget, I adopted a lean, hypothesis-led approach grounded in domain expertise.
+      </p>
+      <div class="process-grid" style="margin-top: 32px;">
+        <article class="process-card">
+          <h3 class="case-card-title">Synthesize domain knowledge</h3>
+          <div class="process-card__stack">
+            <p class="body-copy">Internal expert domain inquiry interviews</p>
+            <p class="body-copy">Map commercial and product constraints</p>
+          </div>
+        </article>
+        <article class="process-card">
+          <h3 class="case-card-title">Model the system before designing UI</h3>
+          <div class="process-card__stack">
+            <p class="body-copy">Define the content model that AI could rely on</p>
+          </div>
+        </article>
+        <article class="process-card">
+          <h3 class="case-card-title">Translate system logic into interaction patterns</h3>
+          <div class="process-card__stack">
+            <p class="body-copy">AI search</p>
+            <p class="body-copy">Conversational guidance</p>
+            <p class="body-copy">Contextualized listings</p>
+          </div>
+        </article>
+        <article class="process-card">
+          <h3 class="case-card-title">Prototype and validate through MVP pilot</h3>
+          <div class="process-card__stack">
+            <p class="body-copy">Observe behavior, not just opinions</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section problem-framing-section">
+    <div class="page-section__inner">
+      <div class="problem-framing-hero">
+        <div class="problem-framing-intro">
+          <p class="eyebrow">Problem Framing</p>
+          <h2 class="section-title">Understanding the Real Problem</h2>
+        </div>
+        <div class="problem-framing-question-grid">
+          <div class="framing-question">
+            <span class="framing-pill"><span class="framing-pill__icon">×</span>NOT</span>
+            <p class="framing-question__text">"How do we improve filters on the listing page?"</p>
+          </div>
+          <div class="framing-arrow">→</div>
+          <div class="framing-question">
+            <span class="framing-pill"><span class="framing-pill__icon">✓</span>BUT</span>
+            <p class="framing-question__text">"How might AI help users decide with confidence?"</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px;">
+        <p class="force-kicker">Three Forces Shaping the Experience</p>
+        <p class="lead" style="margin-top: 8px;">The credit card ecosystem operates across three competing layers</p>
+      </div>
+
+      <div class="force-grid">
+        <article class="force-card">
+          <div class="force-card__header">
+            <svg class="force-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 6V4.5C8 3.67 8.67 3 9.5 3h5C15.33 3 16 3.67 16 4.5V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 8.5C4 7.67 4.67 7 5.5 7h13C19.33 7 20 7.67 20 8.5v10c0 .83-.67 1.5-1.5 1.5h-13C4.67 20 4 19.33 4 18.5v-10Z" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <div>
+              <h3 class="force-card__title">Business</h3>
+              <p class="force-card__layer">Commercial Layer</p>
+            </div>
+          </div>
+          <div class="force-card__body">
+            <p>Revenue driven by card providers</p>
+            <p>Incentives to promote featured cards</p>
+            <p>Push high-conversion products</p>
+          </div>
+        </article>
+
+        <article class="force-card">
+          <div class="force-card__header">
+            <svg class="force-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M5 20c0-3.31 3.13-6 7-6s7 2.69 7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <h3 class="force-card__title">Users</h3>
+              <p class="force-card__layer">Consumer Layer</p>
+            </div>
+          </div>
+          <div class="force-card__body">
+            <p class="force-card__label">Seek</p>
+            <p>"Best card for me"</p>
+            <p>Simple comparisons</p>
+            <p>Trustworthy recommendations</p>
+            <p class="force-card__label">Behaviors</p>
+            <p>Compare only 2–3 cards deeply</p>
+            <p>Struggle with long-term value evaluation</p>
+          </div>
+        </article>
+
+        <article class="force-card">
+          <div class="force-card__header">
+            <svg class="force-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M6 9V6.8L12 4l6 2.8V9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M7.5 9v8.5M12 9v8.5M16.5 9v8.5M5 19.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <h3 class="force-card__title">Providers</h3>
+              <p class="force-card__layer">Bank Layer</p>
+            </div>
+          </div>
+          <div class="force-card__body">
+            <p>Design products for specific segments</p>
+            <p>Profitability (cashback vs miles)</p>
+            <p>Control how benefits are framed</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="tension-banner">
+        <p class="tension-banner__label">Core Tension</p>
+        <p class="tension-banner__body">The "best" card for the user is not always the most visible card on the platform.</p>
+      </div>
+
+      <div class="behavioral-insights">
+        <p class="force-kicker">Key Behavioral Insights</p>
+        <p class="lead" style="margin-top: 8px;">From brainstorm synthesis — directly shaped the AI system design principles</p>
+
+        <div class="insights-grid">
+          <article class="insight-column" id="users-cant-process-large-lists">
+            <h3 class="case-card-title">Users Think in Intent, Not Filters</h3>
+            <div class="insight-stack">
+              <div>
+                <p class="insight-label">They don't search by</p>
+                <p class="insight-copy">"Annual fee &lt; $100"</p>
+              </div>
+              <div>
+                <p class="insight-label">They ask</p>
+                <p class="insight-copy">"Best cashback card for groceries"</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="insight-column">
+            <h3 class="case-card-title">Users Can't Process Large Lists</h3>
+            <div class="insight-stack">
+              <p class="insight-copy">Effective comparison drops after ~3 cards. Too many options → decision paralysis.</p>
+              <div>
+                <p class="insight-label">Cards Users Actually Compare</p>
+                <div class="compare-mini-grid">
+                  <div class="compare-mini-item">
+                    <div class="compare-mini-card compare-mini-card--a">
+                      <span class="compare-mini-card__chip"></span>
+                      <span class="compare-mini-card__label">Card A</span>
+                    </div>
+                    <span class="selected-pill"><span class="selected-pill__dot">✓</span>Selected</span>
+                  </div>
+                  <div class="compare-mini-item">
+                    <div class="compare-mini-card compare-mini-card--b">
+                      <span class="compare-mini-card__chip"></span>
+                      <span class="compare-mini-card__label">Card B</span>
+                    </div>
+                    <span class="selected-pill"><span class="selected-pill__dot">✓</span>Selected</span>
+                  </div>
+                  <div class="compare-mini-item">
+                    <div class="compare-mini-card compare-mini-card--c">
+                      <span class="compare-mini-card__chip"></span>
+                      <span class="compare-mini-card__label">Card C</span>
+                    </div>
+                    <span class="selected-pill"><span class="selected-pill__dot">✓</span>Selected</span>
+                  </div>
+                </div>
+              </div>
+              <p class="compare-mini-footnote">Attention drops sharply beyond 3 options</p>
+            </div>
+          </article>
+
+          <article class="insight-column">
+            <h3 class="case-card-title">Trust Is the Real Bottleneck</h3>
+            <div class="insight-stack">
+              <p class="insight-copy">Users question:</p>
+              <div class="trust-lines">
+                <p class="trust-line">Why a card is recommended</p>
+                <p class="trust-line">Whether results are biased</p>
+              </div>
+              <span class="trust-tag">Explainability = Adoption</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="page-section__inner">
+      <div class="decision-engine-intro">
+        <p class="eyebrow">Designing the AI Decision System</p>
+        <h2 class="section-title" style="margin-top: 12px;">From Listing Page → Decision Engine</h2>
+        <p class="lead" style="margin-top: 16px;">An AI mediation layer embedded within the Product Listing Page — shifting the experience from passive browsing to guided decision-making.</p>
+      </div>
+
+      <div class="system-flow-panel">
+        <p class="system-flow-title">System Logic Flow</p>
+        <figure class="system-flow-image">
+          <img src="./figma-assets/FlowDiagram.png" alt="System logic flow showing start, user inputs, confidence split, scoring, rules, ranking, explanation layer, and hybrid fallback."/>
+        </figure>
+      </div>
+
+      <div class="quote-callout quote-callout--decision-engine">
+        <p class="quote-text">AI must not just recommend — it must explain.</p>
+      </div>
+
+      <div class="interaction-heading">
+        <h2 class="section-title">Interaction Concepts</h2>
+      </div>
+
+      <div class="interaction-board">
+        <figure class="interaction-shot">
+          <img src="./figma-assets/Interaction Concepts.png" alt="Interaction concepts board showing product listings, promo search, profile quiz, and claiming rewards flows."/>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section interface-design-section">
+    <div class="page-section__inner decision-board">
+      <div class="proof-grid">
+        <div>
+          <p class="eyebrow">Translating System Thinking into Interface Design</p>
+          <h2 class="section-title" style="margin-top: 12px;">Four design decisions that shift the paradigm</h2>
+        </div>
+        <div class="interface-hero-grid">
+          <figure class="proof-image-card">
+            <img src="./figma-assets/Open-chat-interface.png" alt="Open chat interface layered over the credit card listing results experience."/>
+          </figure>
+          <figure class="proof-image-card proof-image-card--offset">
+            <img src="./figma-assets/Credit-card-rewards-UI.png" alt="Credit card rewards recommendation interface showing AI-guided curated card results."/>
+          </figure>
+        </div>
+      </div>
+
+      <div class="decision-grid">
+        <article class="decision-row">
+          <div>
+            <div class="decision-number">
+              <span class="decision-number__value">01</span>
+              <span class="decision-tag">Contextual Listings</span>
+            </div>
+            <h3 class="case-card-title">Product Listings — From Static to Contextual</h3>
+            <p class="decision-copy">The Product Listing Page evolves from a catalogue of cards into a set of interpreted recommendations.</p>
+          </div>
+          <ul class="check-list decision-check-list">
+            <li>"Best for..." labels tied to user intent</li>
+            <li>Key benefits surfaced contextually</li>
+            <li>Information layered: Summary → Expand → Details</li>
+          </ul>
+          <div class="decision-takeaway">
+            <span class="decision-takeaway__arrow">→</span>
+            <p class="decision-takeaway__text">The listing becomes an answer to user intent, not just an option.</p>
+          </div>
+        </article>
+
+        <article class="decision-row">
+          <div>
+            <div class="decision-number">
+              <span class="decision-number__value">02</span>
+              <span class="decision-tag">Embedded AI</span>
+            </div>
+            <h3 class="case-card-title">AI Search &amp; Chat — The Decision Guide</h3>
+            <p class="decision-copy">AI is embedded as a continuous intent refinement layer, not a separate chatbot.</p>
+          </div>
+          <div class="decision-detail-stack">
+            <div class="decision-detail-block">
+              <p class="decision-detail-title">A. Direct Search</p>
+              <p class="decision-detail-text">"Best travel card with low fees" → Immediate results</p>
+            </div>
+            <div class="decision-detail-block">
+              <p class="decision-detail-title">B. Guided Flow</p>
+              <p class="decision-detail-text">AI asks clarifying questions. Helps users refine their needs.</p>
+            </div>
+          </div>
+          <div class="decision-takeaway">
+            <span class="decision-takeaway__arrow">→</span>
+            <p class="decision-takeaway__text">Chat controls the experience — it doesn't replace it.</p>
+          </div>
+        </article>
+
+        <article class="decision-row">
+          <div>
+            <div class="decision-number">
+              <span class="decision-number__value">03</span>
+              <span class="decision-tag">Focused Comparison</span>
+            </div>
+            <h3 class="case-card-title">Comparison — Focused, Not Exhaustive</h3>
+            <p class="decision-copy">Comparison narrows into a smaller guided choice set instead of forcing users through data-heavy tables.</p>
+          </div>
+          <div class="decision-detail-stack">
+            <div class="decision-detail-block">
+              <p class="decision-detail-label">Before</p>
+              <p class="decision-detail-text">Dense tables with too many attributes</p>
+            </div>
+            <div class="decision-detail-block">
+              <p class="decision-detail-label">After</p>
+              <p class="decision-detail-text">Limit to 2–3 cards only</p>
+              <p class="decision-detail-text">Highlight only decision-driving differences</p>
+              <p class="decision-detail-text">AI-generated insights: "Higher cashback on groceries"</p>
+            </div>
+          </div>
+          <div class="decision-takeaway">
+            <span class="decision-takeaway__arrow">→</span>
+            <p class="decision-takeaway__text">Comparison becomes decision-oriented, not data-heavy.</p>
+          </div>
+        </article>
+
+        <article class="decision-row">
+          <div>
+            <div class="decision-number">
+              <span class="decision-number__value">04</span>
+              <span class="decision-tag">Post-Selection</span>
+            </div>
+            <h3 class="case-card-title">End-to-End Journey — Beyond Listing</h3>
+            <p class="decision-copy">The experience extends into reinforcing decisions and clarifying value post-selection.</p>
+          </div>
+          <div class="decision-detail decision-detail--empty" aria-hidden="true"></div>
+          <div class="decision-takeaway">
+            <span class="decision-takeaway__arrow">→</span>
+            <p class="decision-takeaway__text">Builds long-term trust and engagement.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="page-section__inner">
+      <p class="eyebrow">Why This Approach Works</p>
+      <h2 class="section-title" style="margin-top: 12px;">Four strategic advantages</h2>
+      <div class="advantage-grid" style="margin-top: 32px;">
+        <article class="advantage-card">
+          <h3 class="case-card-title">Balances Business &amp; User Needs</h3>
+          <p class="body-copy" style="margin-top: 14px;">Business goals stay visible, but the logic for recommendations becomes easier to trust and defend.</p>
+        </article>
+        <article class="advantage-card">
+          <h3 class="case-card-title">Reduces Cognitive Load</h3>
+          <p class="body-copy" style="margin-top: 14px;">AI simplifies the decision landscape while preserving user agency over the final choice.</p>
+        </article>
+        <article class="advantage-card">
+          <h3 class="case-card-title">Makes a Familiar Surface Smarter</h3>
+          <p class="body-copy" style="margin-top: 14px;">The concept upgrades an existing listing pattern instead of forcing users into a completely foreign flow.</p>
+        </article>
+        <article class="advantage-card">
+          <h3 class="case-card-title">Creates a Scalable Foundation</h3>
+          <p class="body-copy" style="margin-top: 14px;">The same decision-system logic can extend to loans, insurance, and other comparison-heavy financial products.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--dark outcome-section">
+    <div class="page-section__inner">
+      <div class="outcome-grid">
+        <div>
+          <p class="eyebrow eyebrow--accent">Outcome</p>
+          <h2 class="section-title section-title--light" style="margin-top: 12px;">MVP Pilot Validated</h2>
+        </div>
+        <ul class="outcome-list">
+          <li>
+            <span class="outcome-check" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="11.667" stroke="currentColor" stroke-width="2.333"/>
+                <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p class="outcome-text">AI improves exploration and helps users narrow the field faster</p>
+          </li>
+          <li>
+            <span class="outcome-check" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="11.667" stroke="currentColor" stroke-width="2.333"/>
+                <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p class="outcome-text">Users rely on AI for clarification and confirmation — not blind trust</p>
+          </li>
+          <li>
+            <span class="outcome-check" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="11.667" stroke="currentColor" stroke-width="2.333"/>
+                <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p class="outcome-text">Explainability is critical to adoption in financial decision journeys</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="closing-panel">
+        <div class="closing-proof">
+          <p class="quote-text closing-quote">Designing AI for financial decisions is not about replacing user choice — it's about building systems that help users make better choices with confidence.</p>
+          <div class="closing-proof-content">
+            <p class="closing-proof-label">This project demonstrates</p>
+            <div class="closing-proof-grid">
+              <div class="closing-proof-item">
+                <p class="closing-proof-arrow" aria-hidden="true">→</p>
+                <p class="closing-proof-text">Reframe UI problems into product and system-level opportunities</p>
+              </div>
+              <div class="closing-proof-item">
+                <p class="closing-proof-arrow" aria-hidden="true">→</p>
+                <p class="closing-proof-text">Think beyond screens into decision logic flow and experience layers</p>
+              </div>
+              <div class="closing-proof-item">
+                <p class="closing-proof-arrow" aria-hidden="true">→</p>
+                <p class="closing-proof-text">Balance user trust, business goals, and technical constraints</p>
+              </div>
+              <div class="closing-proof-item">
+                <p class="closing-proof-arrow" aria-hidden="true">→</p>
+                <p class="closing-proof-text">Design scalable AI-powered systems grounded in real-world constraints</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-actions">
+        <a class="pill-button" href="#top"><span class="pill-button__label">Back to top ↑</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
