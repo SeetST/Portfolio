@@ -13,10 +13,11 @@
     href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,100..1000&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="./styles/case-study-typography.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      font-family: "Google Sans Flex", sans-serif;
+      font-family: var(--cs-font-family);
       background: #f8f8f0;
       color: #333;
     }
@@ -33,29 +34,29 @@
       <section class="mx-auto mt-[60px] w-full max-w-[1216px]">
         <div class="grid gap-8 lg:grid-cols-[795px_373px] lg:gap-12">
           <div class="pb-8">
-            <a href="./index.html" class="text-[16px] leading-6 text-[#333333] hover:underline">← Back to Portfolio</a>
-            <h1 class="mt-6 max-w-[612px] text-[42px] font-semibold leading-[1.2] text-[#2b3437] md:text-[48px] md:leading-[72px]">
+            <a href="./index.html" class="cs-body-sm text-[#333333] hover:underline">← Back to Portfolio</a>
+            <h1 class="cs-h1 mt-6 max-w-[612px] font-semibold text-[#2b3437]">
               <span class="text-[rgb(116_103_43_/_var(--tw-text-opacity,_1))]">Designing for Decision:</span>
               The Credit Card Listing Revamp
             </h1>
-            <p class="mt-6 text-[16px] leading-6 text-[#333333]">CASE STUDY: PERSONAL FINANCE</p>
+            <p class="cs-body-sm mt-6 text-[#333333]">CASE STUDY: PERSONAL FINANCE</p>
           </div>
           <aside class="pb-4">
             <div class="border-l border-[#aca480] pl-6">
-              <p class="text-[19px] font-semibold leading-8 text-[#333333]">
+              <p class="cs-body font-semibold text-[#333333]">
                 Led the redesign of the credit card listing experience to support platform migration and improve
                 cross-channel UX, and delivered the side-by-side comparison feature from concept to launch.
               </p>
             </div>
             <div class="mt-8 grid grid-cols-[150px_1px_177px] items-start gap-5">
               <div class="flex min-h-10 flex-col items-start justify-start">
-                <p class="text-[33px] font-semibold leading-10 text-[#74672b]">12%</p>
-                <p class="mt-1 max-w-[122px] text-[13px] leading-[16px] text-[#333333]">UPLIFT IN CREDIT CARD CVR</p>
+                <p class="cs-h2 font-semibold text-[#74672b]">12%</p>
+                <p class="cs-footnote mt-1 max-w-[122px] text-[#333333]">UPLIFT IN CREDIT CARD CVR</p>
               </div>
               <div class="h-10 w-px bg-[#abb3b7]/30"></div>
               <div class="flex min-h-10 flex-col items-start justify-start">
-                <p class="text-[33px] font-semibold leading-10 text-[#74672b]">Nuxt 3</p>
-                <p class="mt-1 text-[13px] leading-[16px] text-[#333333]">INFRASTRUCTURE MIGRATION</p>
+                <p class="cs-h2 font-semibold text-[#74672b]">Nuxt 3</p>
+                <p class="cs-footnote mt-1 text-[#333333]">INFRASTRUCTURE MIGRATION</p>
               </div>
             </div>
           </aside>
@@ -83,7 +84,7 @@
             </div>
           </div>
         </div>
-        <p class="mt-6 text-center text-[16px] leading-6 text-[#333333]">
+        <p class="cs-body-sm mt-6 text-center text-[#333333]">
           <a
             href="https://www.moneysmart.sg/credit-cards"
             target="_blank"
@@ -97,11 +98,11 @@
 
       <section class="mx-auto w-full max-w-[1216px] rounded-[26px] bg-[#e3e1d5] px-8 py-[100px]">
         <div class="grid gap-10 lg:grid-cols-[341px_747px] lg:gap-16">
-          <h2 class="text-[42px] font-semibold leading-[1.2] text-[#2b3437] md:text-[48px] md:leading-[72px]">
+          <h2 class="cs-h1 font-semibold text-[#2b3437]">
             Context &amp; Strategic Shift
           </h2>
           <div>
-            <p class="text-[23px] font-semibold leading-10 text-[#586064]">
+            <p class="cs-h4 font-semibold text-[#586064]">
               The objective wasn&apos;t merely a facelift. We faced a critical technical pivot-migrating the product
               from a legacy system to a new Nuxt 3 micro-frontend setup. Simultaneously, the business demanded a shift
               toward a user focused &amp; AI-assisted discovery to combat rising customer acquisition costs.
@@ -115,10 +116,10 @@
                     class="h-[44px] w-[44px] object-contain"
                   />
                 </div>
-                <h3 class="text-[23px] font-semibold leading-10 text-[#2b3437]">
+                <h3 class="cs-h4 font-semibold text-[#2b3437]">
                   Evolving toward guided experiences for retention growth
                 </h3>
-                <p class="mt-3 text-[16px] leading-[26px] text-[#586064]">
+                <p class="cs-body-sm mt-3 text-[#586064]">
                   Focusing on guided journeys and AI-supported choices to encourage repeat use and retention
                 </p>
               </article>
@@ -130,8 +131,8 @@
                     class="h-[44px] w-[44px] object-contain"
                   />
                 </div>
-                <h3 class="text-[23px] font-semibold leading-10 text-[#2b3437]">Nuxt 3 Migration</h3>
-                <p class="mt-3 text-[16px] leading-[26px] text-[#586064]">
+                <h3 class="cs-h4 font-semibold text-[#2b3437]">Nuxt 3 Migration</h3>
+                <p class="cs-body-sm mt-3 text-[#586064]">
                   The legacy platform service limits unified scaling to the Hong Kong region and migrating to a more
                   stable Nuxt 3 app service
                 </p>
@@ -144,14 +145,14 @@
       <section class="mx-auto w-full max-w-[1216px] py-[100px]">
         <div class="grid gap-10 lg:grid-cols-[576px_476px] lg:justify-between">
           <div>
-            <p class="text-[16px] leading-6 text-[#333333]">PROBLEM FRAMING</p>
-            <h2 class="mt-4 text-[42px] font-semibold leading-[1.2] text-[#2b3437] md:text-[48px] md:leading-[72px]">
+            <p class="cs-body-sm text-[#333333]">PROBLEM FRAMING</p>
+            <h2 class="cs-h1 mt-4 font-semibold text-[#2b3437]">
               Identifying the leak in the conversion funnel
             </h2>
             <article class="mt-8">
-              <p class="text-[33px] font-semibold leading-[56px] text-[#74672b]">01</p>
-              <h3 class="text-[23px] font-semibold leading-10 text-[#2b3437]">What was breaking</h3>
-              <p class="mt-3 whitespace-pre-line text-[16px] leading-6 text-[#586064]">
+              <p class="cs-h2 font-semibold text-[#74672b]">01</p>
+              <h3 class="cs-h4 font-semibold text-[#2b3437]">What was breaking</h3>
+              <p class="cs-body-sm mt-3 whitespace-pre-line text-[#586064]">
 Low repeat engagement and retention after the initial card application
 Limited ability to identify and reconnect with customers across journeys
 Inconsistent experiences across markets due to lack of standardized playbooks
@@ -159,33 +160,33 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
               </p>
             </article>
             <article class="mt-8">
-              <p class="text-[33px] font-semibold leading-[56px] text-[#74672b]">02</p>
-              <h3 class="text-[23px] font-semibold leading-10 text-[#2b3437]">Critical gap</h3>
-              <p class="mt-3 text-[16px] leading-6 text-[#586064]">
+              <p class="cs-h2 font-semibold text-[#74672b]">02</p>
+              <h3 class="cs-h4 font-semibold text-[#2b3437]">Critical gap</h3>
+              <p class="cs-body-sm mt-3 text-[#586064]">
                 The credit card listing page couldn&apos;t effectively re-engage users after their first application,
                 limiting repeat usage and making it hard to deliver personalized or AI-supported experiences.
               </p>
             </article>
           </div>
           <aside class="h-fit rounded-[8px] bg-[#e1c78f] p-12">
-            <h3 class="text-[23px] font-semibold leading-10 text-[#2b3437]">Business Risk</h3>
+            <h3 class="cs-h4 font-semibold text-[#2b3437]">Business Risk</h3>
             <div class="mt-6 space-y-6">
               <div class="border-b border-[#333333]/15 pb-4">
                 <div class="flex items-center justify-between gap-4">
-                  <p class="text-[16px] leading-6 text-[#333333]">Revenue remained transactional, not compounding</p>
-                  <span class="text-[16px] leading-6 text-[#2b3437]">High</span>
+                  <p class="cs-body-sm text-[#333333]">Revenue remained transactional, not compounding</p>
+                  <span class="cs-body-sm text-[#2b3437]">High</span>
                 </div>
               </div>
               <div class="border-b border-[#333333]/15 pb-4">
                 <div class="flex items-center justify-between gap-4">
-                  <p class="text-[16px] leading-6 text-[#333333]">Slower expansion and reduced competitiveness</p>
-                  <span class="text-[16px] leading-6 text-[#2b3437]">Systemic</span>
+                  <p class="cs-body-sm text-[#333333]">Slower expansion and reduced competitiveness</p>
+                  <span class="cs-body-sm text-[#2b3437]">Systemic</span>
                 </div>
               </div>
               <div>
                 <div class="flex items-center justify-between gap-4">
-                  <p class="text-[16px] leading-6 text-[#333333]">Lost retention → lower customer LTV</p>
-                  <span class="text-[16px] leading-6 text-[#2b3437]">Critical</span>
+                  <p class="cs-body-sm text-[#333333]">Lost retention → lower customer LTV</p>
+                  <span class="cs-body-sm text-[#2b3437]">Critical</span>
                 </div>
               </div>
             </div>
@@ -195,10 +196,10 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
 
       <section class="mx-auto w-full max-w-[1216px] rounded-[26px] bg-[#e3e1d5] px-8 py-[100px]">
         <div class="grid gap-10 lg:grid-cols-[576px_384px] lg:justify-between">
-          <h2 class="text-[42px] font-semibold leading-[1.2] text-[#333333] md:text-[48px] md:leading-[72px]">
+          <h2 class="cs-h1 font-semibold text-[#333333]">
             The Launch-and-Learn Model
           </h2>
-          <p class="pt-2 text-[23px] font-semibold leading-10 text-[#74672b]">
+          <p class="cs-h4 pt-2 font-semibold text-[#74672b]">
             Continuous A/B testing allowed us to validate high-risk features before global rollout.
           </p>
         </div>
@@ -211,8 +212,8 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                 class="h-[44px] w-[44px] object-contain"
               />
             </div>
-            <h3 class="mt-3 text-[23px] font-semibold leading-10">AI Curated Review</h3>
-            <p class="mt-3 text-[16px] leading-6 text-[#f8f8f0]">
+            <h3 class="cs-h4 mt-3 font-semibold">AI Curated Review</h3>
+            <p class="cs-body-sm mt-3 text-[#f8f8f0]">
               Tested AI-curated cards&apos; pros &amp; cons review v.s. the legacy credit card listing
             </p>
           </article>
@@ -224,8 +225,8 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                 class="h-[44px] w-[44px] object-contain"
               />
             </div>
-            <h3 class="mt-3 text-[23px] font-semibold leading-10">Side-by-side Comparison</h3>
-            <p class="mt-3 text-[16px] leading-6 text-[#f8f8f0]">
+            <h3 class="cs-h4 mt-3 font-semibold">Side-by-side Comparison</h3>
+            <p class="cs-body-sm mt-3 text-[#f8f8f0]">
               A sticky comparison tray let users pin up to three cards, helping them view options side by side and
               decide more easily.
             </p>
@@ -238,8 +239,8 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                 class="h-[44px] w-[44px] object-contain"
               />
             </div>
-            <h3 class="mt-3 text-[23px] font-semibold leading-10">The &apos;Removal&apos; Test</h3>
-            <p class="mt-3 text-[16px] leading-6 text-[#f8f8f0]">
+            <h3 class="cs-h4 mt-3 font-semibold">The &apos;Removal&apos; Test</h3>
+            <p class="cs-body-sm mt-3 text-[#f8f8f0]">
               Remove underused card recommendation. Users felt the LLM-generated summaries were lengthy and repetitive.
             </p>
           </article>
@@ -247,13 +248,13 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
       </section>
 
       <section class="mx-auto w-full max-w-[1216px] px-8 pb-0 pt-[100px]">
-        <h2 class="text-center text-[42px] font-semibold leading-[1.2] text-[#2b3437] md:text-[48px] md:leading-[72px]">
+        <h2 class="cs-h1 text-center font-semibold text-[#2b3437]">
           Outcome and Learnings
         </h2>
         <div class="mt-12 border-y border-[#74672b]">
           <div class="overflow-x-auto pb-2 md:overflow-visible md:pb-0">
             <div class="min-w-[980px] md:min-w-0">
-              <div class="grid grid-cols-[260px_360px_300px] gap-6 border-b border-[#74672b] px-4 py-4 text-[16px] leading-6 text-[#333333] md:grid-cols-3 md:gap-[118px]">
+              <div class="cs-body-sm grid grid-cols-[260px_360px_300px] gap-6 border-b border-[#74672b] px-4 py-4 text-[#333333] md:grid-cols-3 md:gap-[118px]">
                 <p>USER DECISION BARRIER</p>
                 <p>DESIGN SOLUTION</p>
                 <p>IMPACT / OUTCOME</p>
@@ -261,13 +262,13 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
               <div class="divide-y divide-[#74672b]/15">
                 <div class="grid grid-cols-[260px_360px_300px] gap-6 px-4 py-8 md:grid-cols-3 md:gap-[118px]">
                   <article>
-                    <h3 class="text-[28px] font-semibold leading-[48px] text-[#2b3437]">Choice Paralysis</h3>
+                    <h3 class="cs-h3 font-semibold text-[#2b3437]">Choice Paralysis</h3>
                   </article>
                   <article>
-                    <span class="inline-block rounded bg-[#e3e3de] px-3 py-1 text-[12px] font-semibold leading-4 text-[#333333]">
+                    <span class="cs-footnote inline-block rounded bg-[#e3e3de] px-3 py-1 font-semibold text-[#333333]">
                       Side-by-side comparison
                     </span>
-                    <p class="mt-4 text-[19px] font-semibold leading-8 text-[#586064]">
+                    <p class="cs-body mt-4 font-semibold text-[#586064]">
                       Launched Side-by-side comparison of up to 3 cards, allowing for immediate feature contrast.
                     </p>
                   </article>
@@ -279,20 +280,20 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                         aria-hidden="true"
                         class="block h-[11px] w-[18px] object-contain"
                       />
-                      <p class="text-[23px] font-semibold leading-10 text-[#74672b]">12%</p>
+                      <p class="cs-h4 font-semibold text-[#74672b]">12%</p>
                     </div>
-                    <p class="mt-2 text-[16px] leading-6 text-[#586064]">Uplift in Credit Card CVR</p>
+                    <p class="cs-body-sm mt-2 text-[#586064]">Uplift in Credit Card CVR</p>
                   </article>
                 </div>
                 <div class="grid grid-cols-[260px_360px_300px] gap-6 px-4 py-8 md:grid-cols-3 md:gap-[118px]">
                   <article>
-                    <h3 class="text-[28px] font-semibold leading-[48px] text-[#2b3437]">Distrust of &apos;Promoted&apos; Content</h3>
+                    <h3 class="cs-h3 font-semibold text-[#2b3437]">Distrust of &apos;Promoted&apos; Content</h3>
                   </article>
                   <article>
-                    <span class="inline-block rounded bg-[#e3e3de] px-3 py-1 text-[12px] font-semibold leading-4 text-[#333333]">
+                    <span class="cs-footnote inline-block rounded bg-[#e3e3de] px-3 py-1 font-semibold text-[#333333]">
                       AI curated human reviews
                     </span>
-                    <p class="mt-4 text-[19px] font-semibold leading-8 text-[#586064]">
+                    <p class="cs-body mt-4 font-semibold text-[#586064]">
                       Combining AI-curated &apos;MoneySmart Says&apos; insights (pros &amp; cons) with key card features to guide decisions
                     </p>
                   </article>
@@ -304,20 +305,20 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                         aria-hidden="true"
                         class="block h-[10px] w-[68px] object-contain"
                       />
-                      <p class="text-[23px] font-semibold leading-10 text-[#74672b]">Build Trust</p>
+                      <p class="cs-h4 font-semibold text-[#74672b]">Build Trust</p>
                     </div>
-                    <p class="mt-2 text-[16px] leading-6 text-[#586064]">Unbiased card review prioritized over marketing copy.</p>
+                    <p class="cs-body-sm mt-2 text-[#586064]">Unbiased card review prioritized over marketing copy.</p>
                   </article>
                 </div>
                 <div class="grid grid-cols-[260px_360px_300px] gap-6 px-4 py-8 md:grid-cols-3 md:gap-[118px]">
                   <article>
-                    <h3 class="text-[28px] font-semibold leading-[48px] text-[#2b3437]">Feature Overload</h3>
+                    <h3 class="cs-h3 font-semibold text-[#2b3437]">Feature Overload</h3>
                   </article>
                   <article>
-                    <span class="inline-block rounded bg-[#e3e3de] px-3 py-1 text-[12px] font-semibold leading-4 text-[#333333]">
+                    <span class="cs-footnote inline-block rounded bg-[#e3e3de] px-3 py-1 font-semibold text-[#333333]">
                       Removed redundant AI summaries
                     </span>
-                    <p class="mt-4 text-[19px] font-semibold leading-8 text-[#586064]">
+                    <p class="cs-body mt-4 font-semibold text-[#586064]">
                       Removed the repetitive AI recommendation summary
                     </p>
                   </article>
@@ -329,14 +330,14 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
                         aria-hidden="true"
                         class="block h-[27px] w-[299px] max-w-full object-contain"
                       />
-                      <p class="text-[23px] font-semibold leading-10 text-[#74672b]">Optimized Content Hierarchy</p>
+                      <p class="cs-h4 font-semibold text-[#74672b]">Optimized Content Hierarchy</p>
                     </div>
-                    <p class="mt-2 text-[16px] leading-6 text-[#586064]">Streamlined content hierarchy focused on conversion.</p>
+                    <p class="cs-body-sm mt-2 text-[#586064]">Streamlined content hierarchy focused on conversion.</p>
                   </article>
                 </div>
               </div>
               <div class="px-4 pb-4 md:hidden">
-                <div class="inline-flex items-center gap-2 rounded-full border border-[#74672b]/30 bg-[#e3e1d5] px-3 py-1 text-[12px] font-medium leading-4 text-[#74672b]">
+                <div class="cs-footnote inline-flex items-center gap-2 rounded-full border border-[#74672b]/30 bg-[#e3e1d5] px-3 py-1 font-medium text-[#74672b]">
                   <span>Swipe left and right</span>
                   <span aria-hidden="true">↔</span>
                 </div>
@@ -354,14 +355,14 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
         </div>
 
         <div class="mt-8 rounded-[26px] bg-[#333333] px-6 py-8 md:px-12 md:py-12">
-          <p class="max-w-[1054px] text-[24px] font-semibold leading-[32px] text-[#e1c78f]">
+          <p class="cs-h4 max-w-[1054px] font-semibold text-[#e1c78f]">
             &quot;The architecture of a choice is as important as the choice itself. By reducing noise, we empowered users to find value faster.&quot;
           </p>
         </div>
       </section>
 
       <div class="mx-auto mt-6 flex w-full max-w-[1216px] justify-end px-8 pt-6">
-        <a href="#top" class="rounded-full border border-[#e2e8f0] bg-white px-[14px] py-2 text-[12px] font-medium leading-5 text-[#333333]">
+        <a href="#top" class="cs-footnote rounded-full border border-[#e2e8f0] bg-white px-[14px] py-2 font-medium text-[#333333]">
           Back to top
         </a>
       </div>

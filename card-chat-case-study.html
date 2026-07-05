@@ -11,8 +11,28 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./figma-assets/favicon/favicon-32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="./figma-assets/favicon/favicon-180.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="./styles/case-study-typography.css"/>
 <style>
   :root {
+    --cs-font-family: var(--cs-font-display);
+    --cs-h1-size: var(--cs-type-h1-size);
+    --cs-h1-line: var(--cs-type-h1-line);
+    --cs-h2-size: var(--cs-type-h2-size);
+    --cs-h2-line: var(--cs-type-h2-line);
+    --cs-h4-size: var(--cs-type-h3-size);
+    --cs-h4-line: var(--cs-type-h3-line);
+    --cs-h5-size: var(--cs-type-h4-size);
+    --cs-h5-line: var(--cs-type-h4-line);
+    --cs-h6-size: var(--cs-type-body-lg-size);
+    --cs-h6-line: var(--cs-type-body-lg-line);
+    --cs-body-size: var(--cs-type-body-size);
+    --cs-body-line: var(--cs-type-body-line);
+    --cs-body-sm-size: var(--cs-type-body-sm-medium-size);
+    --cs-body-sm-line: var(--cs-type-body-sm-medium-line);
+    --cs-caption-size: var(--cs-type-caption-medium-size);
+    --cs-caption-line: var(--cs-type-caption-medium-line);
+    --cs-footnote-size: var(--cs-type-caption-medium-size);
+    --cs-footnote-line: var(--cs-type-caption-medium-line);
     --color-neutral: #e3e3de;
     --color-neutral-variant: #f8f8f0;
     --color-secondary: #333333;
@@ -46,7 +66,7 @@
 
   body {
     margin: 0;
-    font-family: "Google Sans Flex", sans-serif;
+    font-family: var(--cs-font-display);
     background: var(--color-neutral-variant);
     color: var(--color-secondary);
     overflow-x: hidden;
@@ -83,23 +103,13 @@
   }
 
   .eyebrow,
-  .minor-heading,
-  .chip,
-  .pill-button__label {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
-  }
-
-  .eyebrow,
   .minor-heading {
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
 
   .eyebrow {
-    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .eyebrow--accent {
@@ -108,9 +118,6 @@
 
   .section-title {
     margin: 0;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48px;
     color: var(--color-ink);
     overflow-wrap: anywhere;
   }
@@ -121,9 +128,6 @@
 
   .hero-title {
     margin: 0;
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 56px;
     color: var(--color-ink);
     overflow-wrap: anywhere;
   }
@@ -137,9 +141,6 @@
   .body-copy--light,
   .body-copy--accent {
     margin: 0;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
     overflow-wrap: anywhere;
   }
 
@@ -161,18 +162,12 @@
 
   .quote-text {
     margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
     color: var(--color-primary);
     overflow-wrap: anywhere;
   }
 
   .tension-quote {
     margin: 0;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 38px;
     color: var(--color-neutral-variant);
     overflow-wrap: anywhere;
   }
@@ -183,9 +178,6 @@
 
   .case-card-title {
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
     color: var(--color-ink);
     overflow-wrap: anywhere;
   }
@@ -405,8 +397,8 @@
 
   .overview-body {
     margin: 0;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: var(--cs-body-size);
+    line-height: var(--cs-body-line);
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
@@ -423,8 +415,8 @@
     position: relative;
     padding-left: 24px;
     margin: 0;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: var(--cs-body-size);
+    line-height: var(--cs-body-line);
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
@@ -463,8 +455,8 @@
   .arrow-list li {
     position: relative;
     padding-left: 26px;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: var(--cs-body-size);
+    line-height: var(--cs-body-line);
     color: var(--color-muted);
   }
 
@@ -541,9 +533,9 @@
 
   .vision-copy .lead {
     color: var(--color-muted);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 28px;
+    font-size: var(--cs-h5-size);
+    font-weight: var(--cs-weight-semibold);
+    line-height: var(--cs-h5-line);
   }
 
   .role-panel {
@@ -559,9 +551,6 @@
 
   .constraints-label {
     margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 500;
     text-transform: uppercase;
     color: var(--color-muted);
     letter-spacing: 0.03em;
@@ -578,8 +567,8 @@
   .constraints-list li {
     position: relative;
     padding-left: 18px;
-    font-size: 17px;
-    line-height: 24px;
+    font-size: var(--cs-body-sm-size);
+    line-height: var(--cs-body-sm-line);
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
@@ -610,8 +599,6 @@
 
   .capability-copy {
     margin: 0;
-    font-size: 16px;
-    line-height: 24px;
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
@@ -650,9 +637,9 @@
     border-radius: var(--radius-pill);
     background: rgba(116, 103, 43, 0.14);
     color: var(--color-secondary);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    font-size: var(--cs-body-sm-size);
+    font-weight: var(--cs-weight-semibold);
+    line-height: var(--cs-body-sm-line);
     width: fit-content;
   }
 
@@ -669,9 +656,6 @@
 
   .framing-question__text {
     margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 34px;
     color: var(--color-ink);
     overflow-wrap: anywhere;
   }
@@ -688,9 +672,6 @@
 
   .force-kicker {
     margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--color-muted);
@@ -727,17 +708,11 @@
 
   .force-card__title {
     margin: 0;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 30px;
     color: var(--color-ink);
   }
 
   .force-card__layer {
     margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--color-primary);
@@ -754,17 +729,14 @@
   .force-card__body p,
   .force-card__body li {
     margin: 0;
-    font-size: 17px;
-    line-height: 28px;
+    font-size: var(--cs-body-sm-size);
+    line-height: var(--cs-body-sm-line);
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
 
   .force-card__label {
     margin-top: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 22px;
     text-transform: uppercase;
     color: var(--color-secondary);
   }
@@ -791,17 +763,17 @@
   .tension-banner__label {
     margin: 0;
     color: var(--color-tertiary);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    font-size: var(--cs-body-sm-size);
+    font-weight: var(--cs-weight-semibold);
+    line-height: var(--cs-body-sm-line);
     white-space: nowrap;
   }
 
   .tension-banner__body {
     margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
+    font-size: var(--cs-h6-size);
+    font-weight: var(--cs-weight-semibold);
+    line-height: var(--cs-h6-line);
     color: var(--color-neutral-variant);
   }
 
@@ -822,8 +794,8 @@
   }
 
   .insight-column .case-card-title {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: var(--cs-h6-size);
+    line-height: var(--cs-h6-line);
   }
 
   .insight-stack {
@@ -834,9 +806,6 @@
 
   .insight-label {
     margin: 0;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 18px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--color-primary);
@@ -844,8 +813,6 @@
 
   .insight-copy {
     margin: 0;
-    font-size: 16px;
-    line-height: 25px;
     color: var(--color-secondary);
     overflow-wrap: anywhere;
   }
@@ -934,9 +901,9 @@
     min-height: 14px;
     padding: 0;
     color: var(--color-primary);
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
+    font-size: var(--cs-footnote-size);
+    font-weight: var(--cs-weight-regular);
+    line-height: var(--cs-footnote-line);
   }
 
   .selected-pill__dot {
@@ -954,9 +921,6 @@
 
   .compare-mini-footnote {
     margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22px;
     color: var(--color-primary);
   }
 
@@ -968,8 +932,6 @@
   .trust-line {
     margin: 0;
     padding: 12px 0;
-    font-size: 16px;
-    line-height: 24px;
     color: var(--color-secondary);
     border-bottom: 1px solid rgba(172, 164, 128, 0.42);
   }
@@ -982,9 +944,7 @@
     border-radius: var(--radius-pill);
     background: var(--color-primary);
     color: var(--color-neutral-variant);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
+    font-weight: var(--cs-weight-semibold);
     width: fit-content;
   }
 
@@ -1022,9 +982,7 @@
 
   .system-flow-title {
     margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    font-weight: var(--cs-weight-semibold);
     color: var(--color-ink);
   }
 
@@ -1129,9 +1087,6 @@
   }
 
   .decision-number__value {
-    font-size: 33px;
-    font-weight: 600;
-    line-height: 1;
     color: var(--color-primary);
   }
 
@@ -1143,16 +1098,11 @@
     border-radius: var(--radius-pill);
     background: rgba(51, 51, 51, 0.08);
     color: var(--color-secondary);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
     text-transform: uppercase;
   }
 
   .decision-copy {
     margin: 12px 0 0;
-    font-size: 17px;
-    line-height: 30px;
     color: var(--color-muted);
     overflow-wrap: anywhere;
   }
@@ -1170,8 +1120,8 @@
 
   .decision-check-list li {
     color: var(--color-muted);
-    font-size: 18px;
-    line-height: 30px;
+    font-size: var(--cs-body-size);
+    line-height: var(--cs-body-line);
     padding-left: 20px;
   }
 
@@ -1198,25 +1148,17 @@
 
   .decision-detail-label {
     margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
     text-transform: uppercase;
     color: var(--color-primary);
   }
 
   .decision-detail-title {
     margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
     color: var(--color-secondary);
   }
 
   .decision-detail-text {
     margin: 4px 0 0;
-    font-size: 17px;
-    line-height: 28px;
     color: var(--color-muted);
     overflow-wrap: anywhere;
   }
@@ -1236,16 +1178,11 @@
   }
 
   .decision-takeaway__arrow {
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 600;
+    font-weight: var(--cs-weight-semibold);
   }
 
   .decision-takeaway__text {
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
     color: var(--color-primary);
   }
 
@@ -1297,9 +1234,6 @@
 
   .outcome-text {
     margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
     color: var(--color-neutral);
   }
 
@@ -1328,9 +1262,6 @@
 
   .closing-proof-label {
     margin: 0;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
     color: var(--color-tertiary);
   }
 
@@ -1349,18 +1280,13 @@
 
   .closing-proof-arrow {
     margin: 0;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
+    font-weight: var(--cs-weight-regular);
     color: var(--color-tertiary);
   }
 
   .closing-proof-text {
     margin: 0;
-    font-family: "Inter", "Google Sans Flex", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
+    font-family: var(--cs-font-display);
     color: var(--color-neutral-variant);
   }
 
@@ -1418,16 +1344,6 @@
     :root {
       --page-padding-x: 20px;
       --section-padding-y: 56px;
-    }
-
-    .hero-title {
-      font-size: 36px;
-      line-height: 42px;
-    }
-
-    .section-title {
-      font-size: 32px;
-      line-height: 38px;
     }
 
     .overview-grid,
@@ -1516,27 +1432,12 @@
       height: 24px;
     }
 
-    .outcome-text {
-      font-size: 18px;
-      line-height: 26px;
-    }
-
     .closing-proof {
       padding: 32px 24px;
     }
 
     .closing-quote {
       max-width: none;
-    }
-
-    .closing-panel .quote-text {
-      font-size: 22px;
-      line-height: 30px;
-    }
-
-    .closing-proof-label {
-      font-size: 16px;
-      line-height: 24px;
     }
 
     .closing-proof-grid {
@@ -1548,22 +1449,12 @@
       gap: 10px;
     }
 
-    .closing-proof-text {
-      font-size: 14px;
-      line-height: 24px;
-    }
-
     .footer-actions {
       margin-top: 32px;
     }
 
     .footer-actions .pill-button {
       padding: 10px 20px;
-    }
-
-    .footer-actions .pill-button__label {
-      font-size: 12px;
-      line-height: 18px;
     }
 
     .compare-mini-grid {
@@ -1628,7 +1519,7 @@
       right: 8px;
       bottom: 8px;
       margin-left: 0;
-      font-family: "Inter", "Google Sans Flex", sans-serif;
+      font-family: var(--cs-font-display);
       font-size: 7px;
       font-weight: 600;
       line-height: 10.5px;
@@ -1675,22 +1566,22 @@
           <span aria-hidden="true">←</span>
           <span>Back to Portfolio</span>
         </a>
-        <p class="eyebrow">Case Study · Personal Finance</p>
-        <h1 class="hero-title" style="margin-top: 16px;">
+        <p class="eyebrow cs-type-caption-medium">Case Study · Personal Finance</p>
+        <h1 class="hero-title cs-type-h1" style="margin-top: 16px;">
           <span class="hero-title__accent">Reimagining the Credit Card Listing Page</span>
           as an AI Chat Experience
         </h1>
-        <p class="body-copy" style="margin-top: 16px;">From Proof of Concept to MVP Pilot</p>
+        <p class="body-copy cs-type-body" style="margin-top: 16px;">From Proof of Concept to MVP Pilot</p>
       </div>
       <aside class="hero-meta">
-        <p class="lead" style="padding-left: 24px; border-left: 2px solid var(--color-divider-warm);">
+        <p class="lead cs-type-body-lg" style="padding-left: 24px; border-left: 2px solid var(--color-divider-warm);">
           Led as primary product designer alongside Head of Product to reframe a static credit card listing into a guided AI-supported decision experience.
         </p>
         <div class="chips">
-          <span class="chip">AI Experience</span>
-          <span class="chip">Content Modelling</span>
-          <span class="chip">Interaction Design</span>
-          <span class="chip">MVP Pilot</span>
+          <span class="chip cs-type-caption-medium">AI Experience</span>
+          <span class="chip cs-type-caption-medium">Content Modelling</span>
+          <span class="chip cs-type-caption-medium">Interaction Design</span>
+          <span class="chip cs-type-caption-medium">MVP Pilot</span>
         </div>
       </aside>
     </div>
@@ -1698,13 +1589,13 @@
 
   <section class="page-section page-section--dark tension-banner-section" style="padding-top: 56px; padding-bottom: 56px;">
     <div class="page-section__inner tension-grid">
-      <h3 class="tension-quote">
+      <h3 class="tension-quote cs-type-h3">
         <span class="tension-quote__accent">"The experience is optimized for exposure,</span><br>
         <span>while users are trying to make a confident decision."</span>
       </h3>
       <div>
-        <p class="eyebrow eyebrow--accent">Core Problem</p>
-        <p class="body-copy--light" style="margin-top: 12px;">
+        <p class="eyebrow eyebrow--accent cs-type-caption-medium">Core Problem</p>
+        <p class="body-copy--light cs-type-body" style="margin-top: 12px;">
           Listing pages are built to maximize visibility and monetization, not to help people understand tradeoffs, refine intent, or trust what they choose.
         </p>
       </div>
@@ -1713,8 +1604,8 @@
 
   <section class="page-section">
     <div class="page-section__inner">
-      <p class="eyebrow">Overview</p>
-      <h2 class="section-title" style="margin-top: 12px;">From Listing Page to Decision Experience</h2>
+      <p class="eyebrow cs-type-caption-medium">Overview</p>
+      <h2 class="section-title cs-type-h2" style="margin-top: 12px;">From Listing Page to Decision Experience</h2>
       <div class="overview-grid" style="margin-top: 32px;">
         <article class="overview-panel overview-panel--user">
           <div class="overview-label">
@@ -1723,10 +1614,10 @@
                 <path d="M8 8a2.75 2.75 0 1 0 0-5.5A2.75 2.75 0 0 0 8 8Zm0 1.5c-2.62 0-4.75 1.73-4.75 3.86 0 .35.28.64.63.64h8.24c.35 0 .63-.29.63-.64C12.75 11.23 10.62 9.5 8 9.5Z" fill="currentColor"/>
               </svg>
             </span>
-            <p class="minor-heading">User Reality</p>
+            <p class="minor-heading cs-h6">USER REALITY</p>
           </div>
           <div class="overview-stack">
-            <p class="minor-heading">Users arrive with</p>
+            <p class="minor-heading cs-h6">Users arrive with</p>
             <ul class="overview-list overview-list--dash">
               <li>Clear intent — "best cashback card?"</li>
               <li>Limited financial knowledge</li>
@@ -1734,7 +1625,7 @@
           </div>
           <div class="overview-divider"></div>
           <div class="overview-stack">
-            <p class="minor-heading">Forced to compare dozens of cards → leading to</p>
+            <p class="minor-heading cs-h6">Forced to compare dozens of cards → leading to</p>
             <ul class="overview-list overview-list--arrow">
               <li>Choice paralysis → drop-offs</li>
               <li>Suboptimal decisions → low satisfaction, churn</li>
@@ -1748,10 +1639,10 @@
                 <path d="M5.75 3.25V2.5c0-.69.56-1.25 1.25-1.25h2c.69 0 1.25.56 1.25 1.25v.75h2.5c.69 0 1.25.56 1.25 1.25v2.11c0 .28-.18.53-.45.61l-1.8.57V6.75a.75.75 0 0 0-1.5 0v1.51l-2.94.93a1 1 0 0 1-.62 0L4.75 8.26V6.75a.75.75 0 0 0-1.5 0v1.04l-1.8-.57A.64.64 0 0 1 1 6.61V4.5c0-.69.56-1.25 1.25-1.25h2.5Zm3 0h-1.5V2.75h1.5v.5ZM1 8.54l2.25.71v.5a.75.75 0 0 0 1.5 0v-.03l2.5.79c.5.16 1.04.16 1.54 0l2.46-.78v.02a.75.75 0 0 0 1.5 0v-.49l2.25-.71v3.21c0 .69-.56 1.25-1.25 1.25H2.25C1.56 13 1 12.44 1 11.75V8.54Z" fill="currentColor"/>
               </svg>
             </span>
-            <p class="minor-heading">Business Reality</p>
+            <p class="minor-heading cs-h6">BUSINESS REALITY</p>
           </div>
           <div class="overview-stack overview-stack--spacious">
-            <p class="minor-heading">Competing Priorities</p>
+            <p class="minor-heading cs-h6">Competing Priorities</p>
             <p class="overview-body overview-row-rule">Promote high-margin cards</p>
             <p class="overview-body overview-row-rule">Visibility influenced by promotions and featured listings</p>
             <p class="overview-body overview-row-rule">Complex product data difficult to simplify without losing accuracy</p>
@@ -1766,15 +1657,15 @@
     <div class="page-section__inner">
       <div class="vision-grid">
         <div>
-          <p class="eyebrow">Project Vision</p>
-          <h2 class="section-title" style="margin-top: 12px;">Reframing the listing page as a decision system</h2>
+          <p class="eyebrow cs-type-caption-medium">Project Vision</p>
+          <h2 class="section-title cs-type-h2" style="margin-top: 12px;">Reframing the listing page as a decision system</h2>
         </div>
         <div class="vision-copy">
-          <p class="lead">
+          <p class="lead cs-type-body-lg">
             I reframed the credit card listing page into an AI-assisted decision system that guides users toward relevant options based on their needs and intent — augmenting the PLP with intelligence rather than replacing it.
           </p>
           <div class="quote-callout">
-            <p class="quote-text">Improving decision clarity is not just UX — it directly drives higher application completion and better card-user fit, reducing churn and mis-selling risk.</p>
+            <p class="quote-text cs-type-h3">Improving decision clarity is not just UX — it directly drives higher application completion and better card-user fit, reducing churn and mis-selling risk.</p>
           </div>
         </div>
       </div>
@@ -1783,10 +1674,10 @@
 
       <div class="role-grid">
         <div class="role-panel">
-          <p class="eyebrow">My Role</p>
-          <h2 class="section-title" style="margin-top: 12px;">Primary designer, end to end</h2>
+          <p class="eyebrow cs-type-caption-medium">My Role</p>
+          <h2 class="section-title cs-type-h2" style="margin-top: 12px;">Primary designer, end to end</h2>
           <div class="constraints-block">
-            <p class="constraints-label">Working Within Constraints</p>
+            <p class="constraints-label cs-footnote">Working Within Constraints</p>
             <ul class="constraints-list">
               <li>No real AI backend (simulated logic)</li>
               <li>Static product dataset</li>
@@ -1796,20 +1687,20 @@
         </div>
         <div class="capability-grid">
           <article class="capability-card">
-            <h3 class="case-card-title">AI Experience</h3>
-            <p class="capability-copy">How AI behaves within the product listing page</p>
+            <h3 class="case-card-title cs-h6">AI Experience</h3>
+            <p class="capability-copy cs-body-sm">How AI behaves within the product listing page</p>
           </article>
           <article class="capability-card">
-            <h3 class="case-card-title">Content &amp; System Modeling</h3>
-            <p class="capability-copy">Defining the "decision engine" — what the system knows and how it decides</p>
+            <h3 class="case-card-title cs-h6">Content &amp; System Modeling</h3>
+            <p class="capability-copy cs-body-sm">Defining the "decision engine" — what the system knows and how it decides</p>
           </article>
           <article class="capability-card">
-            <h3 class="case-card-title">End-to-End Interaction Design</h3>
-            <p class="capability-copy">Search, listing, conversational guidance, and comparison</p>
+            <h3 class="case-card-title cs-h6">End-to-End Interaction Design</h3>
+            <p class="capability-copy cs-body-sm">Search, listing, conversational guidance, and comparison</p>
           </article>
           <article class="capability-card">
-            <h3 class="case-card-title">MVP Pilot Framing</h3>
-            <p class="capability-copy">What to test and why — scoping validation around real behavior</p>
+            <h3 class="case-card-title cs-h6">MVP Pilot Framing</h3>
+            <p class="capability-copy cs-body-sm">What to test and why — scoping validation around real behavior</p>
           </article>
         </div>
       </div>
@@ -1818,37 +1709,37 @@
 
   <section class="page-section">
     <div class="page-section__inner">
-      <p class="eyebrow">Approach — Designing Under Constraints</p>
-      <h2 class="section-title" style="margin-top: 12px;">A lean, hypothesis-led process</h2>
-      <p class="lead" style="margin-top: 16px;">
+      <p class="eyebrow cs-type-caption-medium">Approach — Designing Under Constraints</p>
+      <h2 class="section-title cs-type-h2" style="margin-top: 12px;">A lean, hypothesis-led process</h2>
+      <p class="lead cs-type-body-lg" style="margin-top: 16px;">
         Without upfront user research budget, I adopted a lean, hypothesis-led approach grounded in domain expertise.
       </p>
       <div class="process-grid" style="margin-top: 32px;">
         <article class="process-card">
-          <h3 class="case-card-title">Synthesize domain knowledge</h3>
+          <h3 class="case-card-title cs-h6">Synthesize domain knowledge</h3>
           <div class="process-card__stack">
-            <p class="body-copy">Internal expert domain inquiry interviews</p>
-            <p class="body-copy">Map commercial and product constraints</p>
+            <p class="body-copy cs-type-body">Internal expert domain inquiry interviews</p>
+            <p class="body-copy cs-type-body">Map commercial and product constraints</p>
           </div>
         </article>
         <article class="process-card">
-          <h3 class="case-card-title">Model the system before designing UI</h3>
+          <h3 class="case-card-title cs-h6">Model the system before designing UI</h3>
           <div class="process-card__stack">
-            <p class="body-copy">Define the content model that AI could rely on</p>
+            <p class="body-copy cs-type-body">Define the content model that AI could rely on</p>
           </div>
         </article>
         <article class="process-card">
-          <h3 class="case-card-title">Translate system logic into interaction patterns</h3>
+          <h3 class="case-card-title cs-h6">Translate system logic into interaction patterns</h3>
           <div class="process-card__stack">
-            <p class="body-copy">AI search</p>
-            <p class="body-copy">Conversational guidance</p>
-            <p class="body-copy">Contextualized listings</p>
+            <p class="body-copy cs-type-body">AI search</p>
+            <p class="body-copy cs-type-body">Conversational guidance</p>
+            <p class="body-copy cs-type-body">Contextualized listings</p>
           </div>
         </article>
         <article class="process-card">
-          <h3 class="case-card-title">Prototype and validate through MVP pilot</h3>
+          <h3 class="case-card-title cs-h6">Prototype and validate through MVP pilot</h3>
           <div class="process-card__stack">
-            <p class="body-copy">Observe behavior, not just opinions</p>
+            <p class="body-copy cs-type-body">Observe behavior, not just opinions</p>
           </div>
         </article>
       </div>
@@ -1859,25 +1750,25 @@
     <div class="page-section__inner">
       <div class="problem-framing-hero">
         <div class="problem-framing-intro">
-          <p class="eyebrow">Problem Framing</p>
-          <h2 class="section-title">Understanding the Real Problem</h2>
+          <p class="eyebrow cs-type-caption-medium">Problem Framing</p>
+          <h2 class="section-title cs-type-h2">Understanding the Real Problem</h2>
         </div>
         <div class="problem-framing-question-grid">
           <div class="framing-question">
             <span class="framing-pill"><span class="framing-pill__icon">×</span>NOT</span>
-            <p class="framing-question__text">"How do we improve filters on the listing page?"</p>
+            <p class="framing-question__text cs-type-h3">"How do we improve filters on the listing page?"</p>
           </div>
           <div class="framing-arrow">→</div>
           <div class="framing-question">
             <span class="framing-pill"><span class="framing-pill__icon">✓</span>BUT</span>
-            <p class="framing-question__text">"How might AI help users decide with confidence?"</p>
+            <p class="framing-question__text cs-type-h3">"How might AI help users decide with confidence?"</p>
           </div>
         </div>
       </div>
 
       <div style="margin-top: 48px;">
-        <p class="force-kicker">Three Forces Shaping the Experience</p>
-        <p class="lead" style="margin-top: 8px;">The credit card ecosystem operates across three competing layers</p>
+        <p class="force-kicker cs-type-caption-medium">Three Forces Shaping the Experience</p>
+        <p class="lead cs-type-body-lg" style="margin-top: 8px;">The credit card ecosystem operates across three competing layers</p>
       </div>
 
       <div class="force-grid">
@@ -1888,8 +1779,8 @@
               <path d="M4 8.5C4 7.67 4.67 7 5.5 7h13C19.33 7 20 7.67 20 8.5v10c0 .83-.67 1.5-1.5 1.5h-13C4.67 20 4 19.33 4 18.5v-10Z" stroke="currentColor" stroke-width="1.8"/>
             </svg>
             <div>
-              <h3 class="force-card__title">Business</h3>
-              <p class="force-card__layer">Commercial Layer</p>
+              <h3 class="force-card__title cs-type-h4">Business</h3>
+              <p class="force-card__layer cs-type-caption-medium">Commercial Layer</p>
             </div>
           </div>
           <div class="force-card__body">
@@ -1906,16 +1797,16 @@
               <path d="M5 20c0-3.31 3.13-6 7-6s7 2.69 7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
             <div>
-              <h3 class="force-card__title">Users</h3>
-              <p class="force-card__layer">Consumer Layer</p>
+              <h3 class="force-card__title cs-type-h4">Users</h3>
+              <p class="force-card__layer cs-type-caption-medium">Consumer Layer</p>
             </div>
           </div>
           <div class="force-card__body">
-            <p class="force-card__label">Seek</p>
+            <p class="force-card__label cs-type-caption-semibold">Seek</p>
             <p>"Best card for me"</p>
             <p>Simple comparisons</p>
             <p>Trustworthy recommendations</p>
-            <p class="force-card__label">Behaviors</p>
+            <p class="force-card__label cs-type-caption-semibold">Behaviors</p>
             <p>Compare only 2–3 cards deeply</p>
             <p>Struggle with long-term value evaluation</p>
           </div>
@@ -1929,8 +1820,8 @@
               <path d="M7.5 9v8.5M12 9v8.5M16.5 9v8.5M5 19.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
             <div>
-              <h3 class="force-card__title">Providers</h3>
-              <p class="force-card__layer">Bank Layer</p>
+              <h3 class="force-card__title cs-type-h4">Providers</h3>
+              <p class="force-card__layer cs-type-caption-medium">Bank Layer</p>
             </div>
           </div>
           <div class="force-card__body">
@@ -1947,30 +1838,30 @@
       </div>
 
       <div class="behavioral-insights">
-        <p class="force-kicker">Key Behavioral Insights</p>
-        <p class="lead" style="margin-top: 8px;">From brainstorm synthesis — directly shaped the AI system design principles</p>
+        <p class="force-kicker cs-type-caption-medium">Key Behavioral Insights</p>
+        <p class="lead cs-type-body-lg" style="margin-top: 8px;">From brainstorm synthesis — directly shaped the AI system design principles</p>
 
         <div class="insights-grid">
           <article class="insight-column" id="users-cant-process-large-lists">
-            <h3 class="case-card-title">Users Think in Intent, Not Filters</h3>
+            <h3 class="case-card-title cs-h6">Users Think in Intent, Not Filters</h3>
             <div class="insight-stack">
               <div>
-                <p class="insight-label">They don't search by</p>
-                <p class="insight-copy">"Annual fee &lt; $100"</p>
+                <p class="insight-label cs-type-caption-semibold">They don't search by</p>
+                <p class="insight-copy cs-body-sm">"Annual fee &lt; $100"</p>
               </div>
               <div>
-                <p class="insight-label">They ask</p>
-                <p class="insight-copy">"Best cashback card for groceries"</p>
+                <p class="insight-label cs-type-caption-semibold">They ask</p>
+                <p class="insight-copy cs-body-sm">"Best cashback card for groceries"</p>
               </div>
             </div>
           </article>
 
           <article class="insight-column">
-            <h3 class="case-card-title">Users Can't Process Large Lists</h3>
+            <h3 class="case-card-title cs-h6">Users Can't Process Large Lists</h3>
             <div class="insight-stack">
-              <p class="insight-copy">Effective comparison drops after ~3 cards. Too many options → decision paralysis.</p>
+              <p class="insight-copy cs-body-sm">Effective comparison drops after ~3 cards. Too many options → decision paralysis.</p>
               <div>
-                <p class="insight-label">Cards Users Actually Compare</p>
+                <p class="insight-label cs-type-caption-semibold">Cards Users Actually Compare</p>
                 <div class="compare-mini-grid">
                   <div class="compare-mini-item">
                     <div class="compare-mini-card compare-mini-card--a">
@@ -1995,19 +1886,19 @@
                   </div>
                 </div>
               </div>
-              <p class="compare-mini-footnote">Attention drops sharply beyond 3 options</p>
+              <p class="compare-mini-footnote cs-type-caption-medium">Attention drops sharply beyond 3 options</p>
             </div>
           </article>
 
           <article class="insight-column">
-            <h3 class="case-card-title">Trust Is the Real Bottleneck</h3>
+            <h3 class="case-card-title cs-h6">Trust Is the Real Bottleneck</h3>
             <div class="insight-stack">
-              <p class="insight-copy">Users question:</p>
+              <p class="insight-copy cs-body-sm">Users question:</p>
               <div class="trust-lines">
-                <p class="trust-line">Why a card is recommended</p>
-                <p class="trust-line">Whether results are biased</p>
+                <p class="trust-line cs-body-sm">Why a card is recommended</p>
+                <p class="trust-line cs-body-sm">Whether results are biased</p>
               </div>
-              <span class="trust-tag">Explainability = Adoption</span>
+              <span class="trust-tag cs-body-sm">Explainability = Adoption</span>
             </div>
           </article>
         </div>
@@ -2018,24 +1909,24 @@
   <section class="page-section">
     <div class="page-section__inner">
       <div class="decision-engine-intro">
-        <p class="eyebrow">Designing the AI Decision System</p>
-        <h2 class="section-title" style="margin-top: 12px;">From Listing Page → Decision Engine</h2>
-        <p class="lead" style="margin-top: 16px;">An AI mediation layer embedded within the Product Listing Page — shifting the experience from passive browsing to guided decision-making.</p>
+        <p class="eyebrow cs-type-caption-medium">Designing the AI Decision System</p>
+        <h2 class="section-title cs-type-h2" style="margin-top: 12px;">From Listing Page → Decision Engine</h2>
+        <p class="lead cs-type-body-lg" style="margin-top: 16px;">An AI mediation layer embedded within the Product Listing Page — shifting the experience from passive browsing to guided decision-making.</p>
       </div>
 
       <div class="system-flow-panel">
-        <p class="system-flow-title">System Logic Flow</p>
+        <p class="system-flow-title cs-body-sm">System Logic Flow</p>
         <figure class="system-flow-image">
           <img src="./figma-assets/FlowDiagram.png" alt="System logic flow showing start, user inputs, confidence split, scoring, rules, ranking, explanation layer, and hybrid fallback."/>
         </figure>
       </div>
 
       <div class="quote-callout quote-callout--decision-engine">
-        <p class="quote-text">AI must not just recommend — it must explain.</p>
+        <p class="quote-text cs-type-h3">AI must not just recommend — it must explain.</p>
       </div>
 
       <div class="interaction-heading">
-        <h2 class="section-title">Interaction Concepts</h2>
+        <h2 class="section-title cs-type-h2">Interaction Concepts</h2>
       </div>
 
       <div class="interaction-board">
@@ -2050,8 +1941,8 @@
     <div class="page-section__inner decision-board">
       <div class="proof-grid">
         <div>
-          <p class="eyebrow">Translating System Thinking into Interface Design</p>
-          <h2 class="section-title" style="margin-top: 12px;">Four design decisions that shift the paradigm</h2>
+          <p class="eyebrow cs-type-caption-medium">Translating System Thinking into Interface Design</p>
+          <h2 class="section-title cs-type-h2" style="margin-top: 12px;">Four design decisions that shift the paradigm</h2>
         </div>
         <figure class="interface-hero-frame">
           <img src="./figma-assets/chat2-recording.gif" alt="Animated credit card rewards recommendation flow showing the AI-guided chat experience in a single interface view."/>
@@ -2062,11 +1953,11 @@
         <article class="decision-row">
           <div>
             <div class="decision-number">
-              <span class="decision-number__value">01</span>
-              <span class="decision-tag">Contextual Listings</span>
+              <span class="decision-number__value cs-type-h2">01</span>
+              <span class="decision-tag cs-type-caption-semibold">Contextual Listings</span>
             </div>
-            <h3 class="case-card-title">Product Listings — From Static to Contextual</h3>
-            <p class="decision-copy">The Product Listing Page evolves from a catalogue of cards into a set of interpreted recommendations.</p>
+            <h3 class="case-card-title cs-h6">Product Listings — From Static to Contextual</h3>
+            <p class="decision-copy cs-type-body-sm-medium">The Product Listing Page evolves from a catalogue of cards into a set of interpreted recommendations.</p>
           </div>
           <ul class="check-list decision-check-list">
             <li>"Best for..." labels tied to user intent</li>
@@ -2074,76 +1965,76 @@
             <li>Information layered: Summary → Expand → Details</li>
           </ul>
           <div class="decision-takeaway">
-            <span class="decision-takeaway__arrow">→</span>
-            <p class="decision-takeaway__text">The listing becomes an answer to user intent, not just an option.</p>
+            <span class="decision-takeaway__arrow cs-h6">→</span>
+            <p class="decision-takeaway__text cs-type-h4">The listing becomes an answer to user intent, not just an option.</p>
           </div>
         </article>
 
         <article class="decision-row">
           <div>
             <div class="decision-number">
-              <span class="decision-number__value">02</span>
-              <span class="decision-tag">Embedded AI</span>
+              <span class="decision-number__value cs-type-h2">02</span>
+              <span class="decision-tag cs-type-caption-semibold">Embedded AI</span>
             </div>
-            <h3 class="case-card-title">AI Search &amp; Chat — The Decision Guide</h3>
-            <p class="decision-copy">AI is embedded as a continuous intent refinement layer, not a separate chatbot.</p>
+            <h3 class="case-card-title cs-h6">AI Search &amp; Chat — The Decision Guide</h3>
+            <p class="decision-copy cs-type-body-sm-medium">AI is embedded as a continuous intent refinement layer, not a separate chatbot.</p>
           </div>
           <div class="decision-detail-stack">
             <div class="decision-detail-block">
-              <p class="decision-detail-title">A. Direct Search</p>
-              <p class="decision-detail-text">"Best travel card with low fees" → Immediate results</p>
+              <p class="decision-detail-title cs-h6">A. Direct Search</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">"Best travel card with low fees" → Immediate results</p>
             </div>
             <div class="decision-detail-block">
-              <p class="decision-detail-title">B. Guided Flow</p>
-              <p class="decision-detail-text">AI asks clarifying questions. Helps users refine their needs.</p>
+              <p class="decision-detail-title cs-h6">B. Guided Flow</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">AI asks clarifying questions. Helps users refine their needs.</p>
             </div>
           </div>
           <div class="decision-takeaway">
-            <span class="decision-takeaway__arrow">→</span>
-            <p class="decision-takeaway__text">Chat controls the experience — it doesn't replace it.</p>
+            <span class="decision-takeaway__arrow cs-h6">→</span>
+            <p class="decision-takeaway__text cs-type-h4">Chat controls the experience — it doesn't replace it.</p>
           </div>
         </article>
 
         <article class="decision-row">
           <div>
             <div class="decision-number">
-              <span class="decision-number__value">03</span>
-              <span class="decision-tag">Focused Comparison</span>
+              <span class="decision-number__value cs-type-h2">03</span>
+              <span class="decision-tag cs-type-caption-semibold">Focused Comparison</span>
             </div>
-            <h3 class="case-card-title">Comparison — Focused, Not Exhaustive</h3>
-            <p class="decision-copy">Comparison narrows into a smaller guided choice set instead of forcing users through data-heavy tables.</p>
+            <h3 class="case-card-title cs-h6">Comparison — Focused, Not Exhaustive</h3>
+            <p class="decision-copy cs-type-body-sm-medium">Comparison narrows into a smaller guided choice set instead of forcing users through data-heavy tables.</p>
           </div>
           <div class="decision-detail-stack">
             <div class="decision-detail-block">
-              <p class="decision-detail-label">Before</p>
-              <p class="decision-detail-text">Dense tables with too many attributes</p>
+              <p class="decision-detail-label cs-type-caption-semibold">Before</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">Dense tables with too many attributes</p>
             </div>
             <div class="decision-detail-block">
-              <p class="decision-detail-label">After</p>
-              <p class="decision-detail-text">Limit to 2–3 cards only</p>
-              <p class="decision-detail-text">Highlight only decision-driving differences</p>
-              <p class="decision-detail-text">AI-generated insights: "Higher cashback on groceries"</p>
+              <p class="decision-detail-label cs-type-caption-semibold">After</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">Limit to 2–3 cards only</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">Highlight only decision-driving differences</p>
+              <p class="decision-detail-text cs-type-body-sm-medium">AI-generated insights: "Higher cashback on groceries"</p>
             </div>
           </div>
           <div class="decision-takeaway">
-            <span class="decision-takeaway__arrow">→</span>
-            <p class="decision-takeaway__text">Comparison becomes decision-oriented, not data-heavy.</p>
+            <span class="decision-takeaway__arrow cs-h6">→</span>
+            <p class="decision-takeaway__text cs-type-h4">Comparison becomes decision-oriented, not data-heavy.</p>
           </div>
         </article>
 
         <article class="decision-row">
           <div>
             <div class="decision-number">
-              <span class="decision-number__value">04</span>
-              <span class="decision-tag">Post-Selection</span>
+              <span class="decision-number__value cs-type-h2">04</span>
+              <span class="decision-tag cs-type-caption-semibold">Post-Selection</span>
             </div>
-            <h3 class="case-card-title">End-to-End Journey — Beyond Listing</h3>
-            <p class="decision-copy">The experience extends into reinforcing decisions and clarifying value post-selection.</p>
+            <h3 class="case-card-title cs-h6">End-to-End Journey — Beyond Listing</h3>
+            <p class="decision-copy cs-type-body-sm-medium">The experience extends into reinforcing decisions and clarifying value post-selection.</p>
           </div>
           <div class="decision-detail decision-detail--empty" aria-hidden="true"></div>
           <div class="decision-takeaway">
-            <span class="decision-takeaway__arrow">→</span>
-            <p class="decision-takeaway__text">Builds long-term trust and engagement.</p>
+            <span class="decision-takeaway__arrow cs-h6">→</span>
+            <p class="decision-takeaway__text cs-type-h4">Builds long-term trust and engagement.</p>
           </div>
         </article>
       </div>
@@ -2152,24 +2043,24 @@
 
   <section class="page-section">
     <div class="page-section__inner">
-      <p class="eyebrow">Why This Approach Works</p>
-      <h2 class="section-title" style="margin-top: 12px;">Four strategic advantages</h2>
+      <p class="eyebrow cs-type-caption-medium">Why This Approach Works</p>
+      <h2 class="section-title cs-type-h2" style="margin-top: 12px;">Four strategic advantages</h2>
       <div class="advantage-grid" style="margin-top: 32px;">
         <article class="advantage-card">
-          <h3 class="case-card-title">Balances Business &amp; User Needs</h3>
-          <p class="body-copy" style="margin-top: 14px;">Business goals stay visible, but the logic for recommendations becomes easier to trust and defend.</p>
+          <h3 class="case-card-title cs-h6">Balances Business &amp; User Needs</h3>
+          <p class="body-copy cs-type-body" style="margin-top: 14px;">Business goals stay visible, but the logic for recommendations becomes easier to trust and defend.</p>
         </article>
         <article class="advantage-card">
-          <h3 class="case-card-title">Reduces Cognitive Load</h3>
-          <p class="body-copy" style="margin-top: 14px;">AI simplifies the decision landscape while preserving user agency over the final choice.</p>
+          <h3 class="case-card-title cs-h6">Reduces Cognitive Load</h3>
+          <p class="body-copy cs-type-body" style="margin-top: 14px;">AI simplifies the decision landscape while preserving user agency over the final choice.</p>
         </article>
         <article class="advantage-card">
-          <h3 class="case-card-title">Makes a Familiar Surface Smarter</h3>
-          <p class="body-copy" style="margin-top: 14px;">The concept upgrades an existing listing pattern instead of forcing users into a completely foreign flow.</p>
+          <h3 class="case-card-title cs-h6">Makes a Familiar Surface Smarter</h3>
+          <p class="body-copy cs-type-body" style="margin-top: 14px;">The concept upgrades an existing listing pattern instead of forcing users into a completely foreign flow.</p>
         </article>
         <article class="advantage-card">
-          <h3 class="case-card-title">Creates a Scalable Foundation</h3>
-          <p class="body-copy" style="margin-top: 14px;">The same decision-system logic can extend to loans, insurance, and other comparison-heavy financial products.</p>
+          <h3 class="case-card-title cs-h6">Creates a Scalable Foundation</h3>
+          <p class="body-copy cs-type-body" style="margin-top: 14px;">The same decision-system logic can extend to loans, insurance, and other comparison-heavy financial products.</p>
         </article>
       </div>
     </div>
@@ -2179,8 +2070,8 @@
     <div class="page-section__inner">
       <div class="outcome-grid">
         <div>
-          <p class="eyebrow eyebrow--accent">Outcome</p>
-          <h2 class="section-title section-title--light" style="margin-top: 12px;">MVP Pilot Validated</h2>
+          <p class="eyebrow eyebrow--accent cs-type-caption-medium">Outcome</p>
+          <h2 class="section-title section-title--light cs-type-h2" style="margin-top: 12px;">MVP Pilot Validated</h2>
         </div>
         <ul class="outcome-list">
           <li>
@@ -2190,7 +2081,7 @@
                 <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-            <p class="outcome-text">AI improves exploration and helps users narrow the field faster</p>
+            <p class="outcome-text cs-type-h3">AI improves exploration and helps users narrow the field faster</p>
           </li>
           <li>
             <span class="outcome-check" aria-hidden="true">
@@ -2199,7 +2090,7 @@
                 <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-            <p class="outcome-text">Users rely on AI for clarification and confirmation — not blind trust</p>
+            <p class="outcome-text cs-type-h3">Users rely on AI for clarification and confirmation — not blind trust</p>
           </li>
           <li>
             <span class="outcome-check" aria-hidden="true">
@@ -2208,32 +2099,32 @@
                 <path d="M10.5 14L13 16.333 17.5 11.667" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-            <p class="outcome-text">Explainability is critical to adoption in financial decision journeys</p>
+            <p class="outcome-text cs-type-h3">Explainability is critical to adoption in financial decision journeys</p>
           </li>
         </ul>
       </div>
 
       <div class="closing-panel">
         <div class="closing-proof">
-          <p class="quote-text closing-quote">Designing AI for financial decisions is not about replacing user choice — it's about building systems that help users make better choices with confidence.</p>
+          <p class="quote-text closing-quote cs-type-h3">Designing AI for financial decisions is not about replacing user choice — it's about building systems that help users make better choices with confidence.</p>
           <div class="closing-proof-content">
-            <p class="closing-proof-label">This project demonstrates</p>
+            <p class="closing-proof-label cs-type-body">This project demonstrates</p>
             <div class="closing-proof-grid">
               <div class="closing-proof-item">
-                <p class="closing-proof-arrow" aria-hidden="true">→</p>
-                <p class="closing-proof-text">Reframe UI problems into product and system-level opportunities</p>
+                <p class="closing-proof-arrow cs-type-h4" aria-hidden="true">→</p>
+                <p class="closing-proof-text cs-type-body">Reframe UI problems into product and system-level opportunities</p>
               </div>
               <div class="closing-proof-item">
-                <p class="closing-proof-arrow" aria-hidden="true">→</p>
-                <p class="closing-proof-text">Think beyond screens into decision logic flow and experience layers</p>
+                <p class="closing-proof-arrow cs-type-h4" aria-hidden="true">→</p>
+                <p class="closing-proof-text cs-type-body">Think beyond screens into decision logic flow and experience layers</p>
               </div>
               <div class="closing-proof-item">
-                <p class="closing-proof-arrow" aria-hidden="true">→</p>
-                <p class="closing-proof-text">Balance user trust, business goals, and technical constraints</p>
+                <p class="closing-proof-arrow cs-type-h4" aria-hidden="true">→</p>
+                <p class="closing-proof-text cs-type-body">Balance user trust, business goals, and technical constraints</p>
               </div>
               <div class="closing-proof-item">
-                <p class="closing-proof-arrow" aria-hidden="true">→</p>
-                <p class="closing-proof-text">Design scalable AI-powered systems grounded in real-world constraints</p>
+                <p class="closing-proof-arrow cs-type-h4" aria-hidden="true">→</p>
+                <p class="closing-proof-text cs-type-body">Design scalable AI-powered systems grounded in real-world constraints</p>
               </div>
             </div>
           </div>
@@ -2241,7 +2132,7 @@
       </div>
 
       <div class="footer-actions">
-        <a class="pill-button" href="#top"><span class="pill-button__label">Back to top ↑</span></a>
+        <a class="pill-button" href="#top"><span class="pill-button__label cs-type-caption-medium">Back to top ↑</span></a>
       </div>
     </div>
   </section>

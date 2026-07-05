@@ -12,6 +12,37 @@
   --type-skill-title-line: 1.6;
   --type-skill-body-size: 0.875rem;
   --type-skill-body-line: 1.57;
+  --cs-color-page: #f8f8f0;
+  --cs-color-surface: #ffffff;
+  --cs-color-surface-muted: #f1f0ea;
+  --cs-color-border: #e3e3de;
+  --cs-color-border-strong: #aca480;
+  --cs-color-ink: #2b3437;
+  --cs-color-text: #333333;
+  --cs-color-muted: #586064;
+  --cs-color-primary: #74672b;
+  --cs-color-primary-soft: #e3e1d5;
+  --cs-color-accent: #e1c78f;
+  --cs-color-reflection: #2b3437;
+  --cs-shadow-phone: 0 32px 64px rgba(43, 52, 55, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --cs-shadow-card: 0 16px 32px rgba(43, 52, 55, 0.08);
+  --cs-radius-card: 16px;
+  --cs-radius-card-sm: 14px;
+  --cs-radius-section: 26px;
+  --cs-radius-pill: 9999px;
+  --cs-space-4: 4px;
+  --cs-space-8: 8px;
+  --cs-space-12: 12px;
+  --cs-space-16: 16px;
+  --cs-space-20: 20px;
+  --cs-space-24: 24px;
+  --cs-space-32: 32px;
+  --cs-space-40: 40px;
+  --cs-space-48: 48px;
+  --cs-space-64: 64px;
+  --cs-page-max: 1152px;
+  --cs-phone-width: 220px;
+  --cs-transition-base: 180ms ease;
 }
 
 body,
