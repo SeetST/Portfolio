@@ -209,3 +209,42 @@
   font-weight: var(--cs-weight-medium);
   line-height: var(--cs-type-caption-medium-line);
 }
+
+@media (max-width: 768px) {
+  /* Preserve the earlier mobile hierarchy from the existing case-study pages. */
+  .cs-type-h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .cs-type-h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .cs-type-h3,
+  .cs-type-h4 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .cs-h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .cs-h2 {
+    font-size: 33px;
+    line-height: 56px;
+  }
+
+  .cs-h3 {
+    font-size: 28px;
+    line-height: 48px;
+  }
+
+  .cs-h4 {
+    font-size: 23px;
+    line-height: 40px;
+  }
+}
