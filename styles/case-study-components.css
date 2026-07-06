@@ -239,6 +239,8 @@ html {
 .cs-friction-card__icon-wrap img {
   width: 20px;
   height: 20px;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 
 .cs-friction-card h3,
