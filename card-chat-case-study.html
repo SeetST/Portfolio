@@ -1301,7 +1301,6 @@
     .tension-grid,
     .vision-grid,
     .role-grid,
-    .problem-framing-hero,
     .outcome-grid,
     .proof-grid,
     .decision-row {
@@ -1324,7 +1323,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .problem-framing-question-grid,
     .force-grid,
     .insights-grid {
       grid-template-columns: 1fr;
@@ -1332,6 +1330,14 @@
 
     .force-card {
       min-height: auto;
+    }
+
+  }
+
+  @media (max-width: 900px) {
+    .problem-framing-hero,
+    .problem-framing-question-grid {
+      grid-template-columns: 1fr;
     }
 
     .framing-arrow {
