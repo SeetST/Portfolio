@@ -1,0 +1,250 @@
+:root {
+  /* Canonical typography tokens from the provided machine-readable token map. */
+  --cs-font-display: "Google Sans Flex", sans-serif;
+  --cs-font-caption: "Inter", sans-serif;
+  --cs-font-caption-alt: "Google Sans Flex", sans-serif;
+
+  --cs-weight-regular: 400;
+  --cs-weight-medium: 500;
+  --cs-weight-semibold: 600;
+
+  --cs-type-display-size: 48px;
+  --cs-type-display-line: 56px;
+  --cs-type-h1-size: 40px;
+  --cs-type-h1-line: 48px;
+  --cs-type-h2-size: 32px;
+  --cs-type-h2-line: 40px;
+  --cs-type-h3-size: 24px;
+  --cs-type-h3-line: 32px;
+  --cs-type-h4-size: 20px;
+  --cs-type-h4-line: 28px;
+  --cs-type-body-lg-size: 18px;
+  --cs-type-body-lg-line: 26px;
+  --cs-type-body-size: 16px;
+  --cs-type-body-line: 24px;
+  --cs-type-body-sm-medium-size: 14px;
+  --cs-type-body-sm-medium-line: 22px;
+  --cs-type-caption-size: 10px;
+  --cs-type-caption-line: 15px;
+  --cs-type-caption-letter-spacing: 1px;
+  --cs-type-caption-medium-size: 12px;
+  --cs-type-caption-medium-line: 20px;
+  --cs-type-caption-semibold-size: 12px;
+  --cs-type-caption-semibold-line: 16px;
+  --cs-type-caption-semibold-letter-spacing: 1px;
+}
+
+/* Canonical utilities for future case-study pages. */
+.cs-type-display,
+.cs-type-h1,
+.cs-type-h2,
+.cs-type-h3,
+.cs-type-h4,
+.cs-type-body-lg,
+.cs-type-body-lg-semibold,
+.cs-type-body,
+.cs-type-body-sm-medium,
+.cs-type-caption,
+.cs-type-caption-medium,
+.cs-type-caption-semibold {
+  letter-spacing: normal;
+}
+
+.cs-type-display {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-display-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-display-line);
+}
+
+.cs-type-h1 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h1-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h1-line);
+}
+
+.cs-type-h2 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h2-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h2-line);
+}
+
+.cs-type-h3 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h3-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h3-line);
+}
+
+.cs-type-h4 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h4-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h4-line);
+}
+
+.cs-type-body-lg {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-lg-size);
+  font-weight: var(--cs-weight-regular);
+  line-height: var(--cs-type-body-lg-line);
+}
+
+.cs-type-body-lg-semibold {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-lg-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-body-lg-line);
+}
+
+.cs-type-body {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-size);
+  font-weight: var(--cs-weight-regular);
+  line-height: var(--cs-type-body-line);
+}
+
+.cs-type-body-sm-medium {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-sm-medium-size);
+  font-weight: var(--cs-weight-medium);
+  line-height: var(--cs-type-body-sm-medium-line);
+}
+
+.cs-type-caption {
+  font-family: var(--cs-font-caption);
+  font-size: var(--cs-type-caption-size);
+  font-weight: var(--cs-weight-regular);
+  letter-spacing: var(--cs-type-caption-letter-spacing);
+  line-height: var(--cs-type-caption-line);
+}
+
+.cs-type-caption-medium {
+  font-family: var(--cs-font-caption-alt);
+  font-size: var(--cs-type-caption-medium-size);
+  font-weight: var(--cs-weight-medium);
+  line-height: var(--cs-type-caption-medium-line);
+}
+
+.cs-type-caption-semibold {
+  font-family: var(--cs-font-caption);
+  font-size: var(--cs-type-caption-semibold-size);
+  font-weight: var(--cs-weight-semibold);
+  letter-spacing: var(--cs-type-caption-semibold-letter-spacing);
+  line-height: var(--cs-type-caption-semibold-line);
+}
+
+/*
+  Compatibility aliases for the current case-study pages.
+  Keep these until existing HTML is remapped to the canonical cs-type-* classes.
+*/
+.cs-h1 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-display-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-display-line);
+}
+
+.cs-h2 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h1-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h1-line);
+}
+
+.cs-h3 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h2-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h2-line);
+}
+
+.cs-h4 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h3-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h3-line);
+}
+
+.cs-h5 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-h4-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-h4-line);
+}
+
+.cs-h6 {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-lg-size);
+  font-weight: var(--cs-weight-semibold);
+  line-height: var(--cs-type-body-lg-line);
+}
+
+.cs-body {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-lg-size);
+  font-weight: var(--cs-weight-regular);
+  line-height: var(--cs-type-body-lg-line);
+}
+
+.cs-body-sm {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-size);
+  font-weight: var(--cs-weight-regular);
+  line-height: var(--cs-type-body-line);
+}
+
+.cs-caption {
+  font-family: var(--cs-font-display);
+  font-size: var(--cs-type-body-sm-medium-size);
+  font-weight: var(--cs-weight-medium);
+  line-height: var(--cs-type-body-sm-medium-line);
+}
+
+.cs-footnote {
+  font-family: var(--cs-font-caption-alt);
+  font-size: var(--cs-type-caption-medium-size);
+  font-weight: var(--cs-weight-medium);
+  line-height: var(--cs-type-caption-medium-line);
+}
+
+@media (max-width: 768px) {
+  /* Preserve the earlier mobile hierarchy from the existing case-study pages. */
+  .cs-type-h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .cs-type-h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .cs-type-h3,
+  .cs-type-h4 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .cs-h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .cs-h2 {
+    font-size: 33px;
+    line-height: 56px;
+  }
+
+  .cs-h3 {
+    font-size: 28px;
+    line-height: 48px;
+  }
+
+  .cs-h4 {
+    font-size: 23px;
+    line-height: 40px;
+  }
+}
