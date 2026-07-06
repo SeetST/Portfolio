@@ -20,6 +20,117 @@
   <link rel="stylesheet" href="./styles/tokens.css" />
   <link rel="stylesheet" href="./styles/case-study-typography.css" />
   <link rel="stylesheet" href="./styles/case-study-components.css" />
+  <style>
+    .cs-hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .cs-back-link {
+      margin-bottom: 0;
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--cs-space-8);
+      margin-bottom: 0;
+    }
+
+    .cs-title-block {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      border-left: 2px solid var(--cs-color-border-strong);
+      padding-left: 32px;
+    }
+
+    .cs-title-block__art {
+      width: 96px;
+      flex: 0 0 96px;
+      padding-top: 0;
+    }
+
+    .cs-title-block__art img {
+      width: 96px;
+    }
+
+    .cs-title {
+      max-width: 884px;
+    }
+
+    .cs-value-statement {
+      width: 100%;
+      max-width: 704px;
+      margin-top: 0;
+      padding: 24px 25px;
+    }
+
+    @media (max-width: 767px) {
+      .cs-hero-grid {
+        gap: 20px;
+      }
+
+      .cs-back-link {
+        margin-bottom: var(--cs-space-24);
+      }
+
+      .cs-meta {
+        gap: var(--cs-space-4);
+        margin-bottom: 8px;
+      }
+
+      .cs-title-block {
+        flex-direction: column;
+        gap: 14px;
+        align-items: start;
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .cs-title-block__art {
+        width: 56px;
+        flex-basis: 56px;
+      }
+
+      .cs-title-block__art img {
+        width: 56px;
+      }
+
+      .cs-title {
+        max-width: none;
+      }
+
+      .cs-value-statement {
+        padding: 18px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .cs-meta {
+        flex-direction: row;
+        gap: 0;
+        padding-inline: 18px;
+      }
+
+      .cs-meta p + p {
+        position: relative;
+        padding-left: 37px;
+      }
+
+      .cs-meta p + p::before {
+        content: "|";
+        position: absolute;
+        left: 16px;
+        color: var(--cs-color-primary);
+        font-family: var(--cs-font-caption);
+        font-size: 12px;
+        font-weight: var(--cs-weight-medium);
+        line-height: 20px;
+      }
+    }
+  </style>
 </head>
 <body class="case-study-page">
   <main id="top" class="cs-page">
