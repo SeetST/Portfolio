@@ -4,6 +4,7 @@ import pathlib
 import socketserver
 import threading
 import unittest
+import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 
@@ -15,14 +16,25 @@ class LinkParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links = []
+        self.assets = []
 
     def handle_starttag(self, tag, attrs):
-        if tag != "a":
-            return
         attributes = dict(attrs)
-        href = attributes.get("href")
-        if href:
-            self.links.append(href)
+        if tag == "a":
+            href = attributes.get("href")
+            if href:
+                self.links.append(href)
+            return
+
+        if tag == "link":
+            href = attributes.get("href")
+            if href:
+                self.assets.append(href)
+            return
+
+        src = attributes.get("src")
+        if src:
+            self.assets.append(src)
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -52,13 +64,34 @@ class StaticSmokeTests(unittest.TestCase):
 
     def fetch(self, path):
         with urllib.request.urlopen(f"http://127.0.0.1:{self.port}{path}") as response:
-            return response.status, response.read().decode("utf-8")
+            return response.status, response.read(), response.headers.get_content_type()
+
+    def fetch_text(self, path):
+        status, body, _ = self.fetch(path)
+        return status, body.decode("utf-8")
+
+    def assert_local_assets_resolve(self, body):
+        parser = LinkParser()
+        parser.feed(body)
+
+        for asset in parser.assets:
+            if not asset.startswith("./"):
+                continue
+            request_path = urllib.parse.quote(
+                asset.split("?", 1)[0].removeprefix("."),
+                safe="/:-._~",
+            )
+            status, _, _ = self.fetch(request_path)
+            self.assertEqual(status, 200, msg=f"{asset} did not resolve")
+
+        return parser
 
     def assert_page_contains(self, path, *snippets):
-        status, body = self.fetch(path)
+        status, body = self.fetch_text(path)
         self.assertEqual(status, 200, msg=f"{path} did not return 200")
         for snippet in snippets:
             self.assertIn(snippet, body, msg=f"{path} missing expected snippet: {snippet}")
+        self.assert_local_assets_resolve(body)
         return body
 
     def test_homepage_case_study_links_resolve(self):
@@ -68,8 +101,7 @@ class StaticSmokeTests(unittest.TestCase):
             "./credit-card-revamp.html",
             "./mobile-usability-research.html",
         )
-        parser = LinkParser()
-        parser.feed(body)
+        parser = self.assert_local_assets_resolve(body)
 
         for href in (
             "./card-chat-case-study.html",
@@ -77,7 +109,7 @@ class StaticSmokeTests(unittest.TestCase):
             "./mobile-usability-research.html",
         ):
             self.assertIn(href, parser.links)
-            status, _ = self.fetch(href.removeprefix("."))
+            status, _, _ = self.fetch(href.removeprefix("."))
             self.assertEqual(status, 200, msg=f"{href} did not resolve from homepage")
 
     def test_card_chat_case_study_renders_problem_framing_content(self):

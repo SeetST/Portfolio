@@ -27,6 +27,7 @@ concurrency:
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,16 +45,32 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: smoke-test
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build Pages artifact
+        run: |
+          rm -rf dist-pages
+          mkdir -p dist-pages
+          cp -R \
+            404.html \
+            _next \
+            card-chat-case-study.html \
+            credit-card-revamp.html \
+            favicon.ico \
+            figma-assets \
+            index.html \
+            mobile-usability-research.html \
+            styles \
+            dist-pages/
+          touch dist-pages/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: './dist-pages'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
