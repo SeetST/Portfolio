@@ -7,7 +7,7 @@
 <link rel="preload" as="image" imageSrcSet="./figma-assets/Logo.png 1x, ./figma-assets/Logo.png 2x"/>
 <link rel="preload" as="image" imageSrcSet="./figma-assets/hero-portrait.png 640w, ./figma-assets/hero-portrait.png 750w, ./figma-assets/hero-portrait.png 828w, ./figma-assets/hero-portrait.png 1080w, ./figma-assets/hero-portrait.png 1200w, ./figma-assets/hero-portrait.png 1920w, ./figma-assets/hero-portrait.png 2048w, ./figma-assets/hero-portrait.png 3840w" imageSizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 640px"/>
 <link rel="stylesheet" href="./_next/static/css/eb56bbb2ee44e966.css" data-precedence="next"/>
-<link rel="stylesheet" href="./styles/tokens.css?v=20260706-pages-cache-bust"/>
+<link rel="stylesheet" href="./styles/tokens.css?v=20260708-homepage-projects-figma-tokens"/>
 <link rel="preload" as="script" fetchPriority="low" href="./_next/static/chunks/webpack-59b7ab5d5e64ff3d.js"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
@@ -20,25 +20,25 @@
 </head>
 <body>
 <main>
-<header class="sticky top-0 z-20 border-b border-[#e6e3d9] bg-[#f7f6ef]/95 backdrop-blur">
+<header class="home-header sticky top-0 z-20 border-b backdrop-blur">
 <div class="section-shell flex h-[68px] items-center justify-between">
 <div class="flex items-center gap-2.5">
 <img alt="Seet Seah Teai logo" width="29" height="35" decoding="async" data-nimg="1" class="h-[22px] w-auto" style="color:transparent" srcSet="./figma-assets/Logo.png 1x, ./figma-assets/Logo.png 2x" src="./figma-assets/Logo.png"/>
-<span class="text-[17px] font-semibold tracking-[0.01em] text-[#2f312d]">SEET SEAH TEAI</span>
+<span class="home-header__brand">SEET SEAH TEAI</span>
 </div>
-<nav class="hidden items-center gap-[18px] text-[17px] font-medium text-[#44453f] md:flex">
-<a href="#about" class="hover:text-[#201f1a]">About</a>
-<a href="#career" class="hover:text-[#201f1a]">Career</a>
-<a href="#skills" class="hover:text-[#201f1a]">Skills</a>
-<a href="#projects" class="hover:text-[#201f1a]">Projects</a>
-<a href="#contact" class="hover:text-[#201f1a]">Contact</a>
+<nav class="home-header__nav home-header__nav--desktop hidden items-center">
+<a href="#about" class="home-header__nav-link">About</a>
+<a href="#career" class="home-header__nav-link">Career</a>
+<a href="#skills" class="home-header__nav-link">Skills</a>
+<a href="#projects" class="home-header__nav-link">Case Study</a>
+<a href="#contact" class="home-header__nav-link">Contact</a>
 </nav>
-<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="hidden items-center gap-2 text-[#7b6b2e] md:inline-flex">
+<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="home-header__desktop-link hidden items-center gap-2">
 <img alt="LinkedIn" loading="lazy" width="22" height="24" decoding="async" data-nimg="1" class="h-[16px] w-auto" style="color:transparent" srcSet="./figma-assets/Linkedin-Logo.png 1x, ./figma-assets/Linkedin-Logo.png 2x" src="./figma-assets/Linkedin-Logo.png"/>
-<span class="text-[17px] font-medium">LinkedIn Profile</span>
+<span class="home-header__linkedin">LinkedIn Profile</span>
 </a>
-<details class="group relative md:hidden">
-<summary class="flex h-9 w-9 list-none items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700">
+<details class="home-header__mobile-menu group relative">
+<summary class="home-header__mobile-trigger flex h-9 w-9 list-none items-center justify-center rounded-lg border">
 <span class="sr-only">Open navigation</span>
 <span class="space-y-1.5">
 <span class="block h-0.5 w-4 bg-current">
@@ -49,41 +49,38 @@
 </span>
 </span>
 </summary>
-<nav class="absolute right-0 top-12 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-card">
-<a href="#about" class="block rounded-lg px-3 py-2 text-sm font-medium text-[#3f4038] hover:bg-[#f2f0e8]">About</a>
-<a href="#career" class="block rounded-lg px-3 py-2 text-sm font-medium text-[#3f4038] hover:bg-[#f2f0e8]">Career</a>
-<a href="#skills" class="block rounded-lg px-3 py-2 text-sm font-medium text-[#3f4038] hover:bg-[#f2f0e8]">Skills</a>
-<a href="#projects" class="block rounded-lg px-3 py-2 text-sm font-medium text-[#3f4038] hover:bg-[#f2f0e8]">Projects</a>
-<a href="#contact" class="block rounded-lg px-3 py-2 text-sm font-medium text-[#3f4038] hover:bg-[#f2f0e8]">Contact</a>
-<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="mt-1 flex items-center gap-2 rounded-lg bg-[#74672b] px-3 py-2 text-[#f7f6ef]">
+<nav class="home-header__mobile-panel absolute right-0 top-12 rounded-xl border p-2 shadow-card">
+<a href="#about" class="home-header__mobile-link block rounded-lg px-3 py-2">About</a>
+<a href="#career" class="home-header__mobile-link block rounded-lg px-3 py-2">Career</a>
+<a href="#skills" class="home-header__mobile-link block rounded-lg px-3 py-2">Skills</a>
+<a href="#projects" class="home-header__mobile-link block rounded-lg px-3 py-2">Case Study</a>
+<a href="#contact" class="home-header__mobile-link block rounded-lg px-3 py-2">Contact</a>
+<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="home-header__mobile-linkedin mt-1 flex items-center gap-2 rounded-lg px-3 py-2">
 <img alt="LinkedIn" loading="lazy" width="22" height="24" decoding="async" data-nimg="1" class="h-[14px] w-auto" style="color:transparent" srcSet="./figma-assets/Linkedin-Logo.png 1x, ./figma-assets/Linkedin-Logo.png 2x" src="./figma-assets/Linkedin-Logo.png"/>
-<span class="text-sm font-semibold">LinkedIn Profile</span>
+<span class="home-header__mobile-linkedin-label">LinkedIn Profile</span>
 </a>
 </nav>
 </details>
 </div>
 </header>
 <section id="top" class="hero-gradient">
-<div data-parallax="true" data-parallax-speed="14" class="parallax-section section-shell grid gap-10 pb-14 pt-10 md:grid-cols-2 md:gap-14 md:pt-14 min-[1536px]:gap-[60px] min-[1536px]:pt-[72px]">
+<div data-parallax="true" data-parallax-speed="14" class="home-hero-section parallax-section section-shell grid gap-10 pb-14 pt-10 md:grid-cols-2 md:gap-14 md:pt-14 min-[1536px]:gap-[60px] min-[1536px]:pt-[72px]">
 <div id="about" class="space-y-6">
-<div class="inline-flex rounded-full bg-[#efede3] px-[14px] py-[6px] text-[14px] font-semibold tracking-[0.04em] text-[#5f604f]">Senior Product Designer | Fintech, SaaS</div>
-<h1 class="slice-reveal type-display max-w-[540px] font-semibold text-[#313330]">
+<div class="hero-badge inline-flex">Senior Product Designer | Fintech, SaaS</div>
+<h1 class="slice-reveal hero-title">
 <span class="slice-reveal__row">
 <span class="slice-reveal__text">
-<span class="text-[#706233]">Designing decision-centric experiences</span> that increase conversion and trust</span>
+<span class="hero-title__accent">Designing decision-centric experiences</span> that increase conversion and trust</span>
 </span>
 </h1>
-<p class="slice-reveal slice-reveal--body type-lead max-w-[540px] text-[#575852]">
+<p class="slice-reveal slice-reveal--body hero-body">
 <span class="slice-reveal__row">
-<span class="slice-reveal__text">Singapore-based Senior Product Designer with 8 years of experience in fintech and SaaS.</span>
-</span>
-<span class="slice-reveal__row">
-<span class="slice-reveal__text">I design comparison journeys, dashboard workflows, experiments, and design system that help users make confident decisions and enable teams to ship impactful features.</span>
+<span class="slice-reveal__text">Singapore-based Senior Product Designer with domain experience in fintech and SaaS. I design comparison journeys, dashboard workflows, experiments, and design system that help users make confident decisions and enable teams to ship impactful features.</span>
 </span>
 </p>
-<div class="flex flex-wrap gap-3">
-<a href="#projects" class="inline-flex items-center justify-center rounded-[10px] px-4 py-2 text-[14px] font-semibold leading-[1.2] transition border border-[#6f6228] bg-[#74672b] text-[#f9f8f0] shadow-cta hover:brightness-95 ">View Case Studies</a>
-<a href="#contact" class="inline-flex items-center justify-center rounded-[10px] px-4 py-2 text-[14px] font-semibold leading-[1.2] transition border border-[#d8d6cc] bg-[#fdfdf9] text-[#3f3f38] hover:bg-[#f5f3ea] ">Contact Me</a>
+<div class="hero-actions flex flex-wrap">
+<a href="#projects" class="hero-cta hero-cta--primary inline-flex items-center justify-center">View Case Studies</a>
+<a href="#contact" class="hero-cta hero-cta--secondary inline-flex items-center justify-center">Contact Me</a>
 </div>
 </div>
 <div class="hero-photo-stage relative mx-auto w-full max-w-[432px] overflow-hidden aspect-[1.44/1]">
@@ -95,10 +92,10 @@
 </div>
 </div>
 </section>
-<section id="career" class="bg-[#f8f7f2] py-14 min-[1536px]:py-[56px]">
+<section id="career" class="career-section bg-[#f8f7f2] py-14 min-[1536px]:py-[56px]">
 <div data-parallax="true" data-parallax-speed="18" class="parallax-section section-shell">
-<h2 class="type-section-title text-center font-semibold text-[#30322e]">Professional Journey</h2>
-<p class="mt-2 text-center text-[18px] leading-6 text-[#686962]">Key milestones and career progression over the years.</p>
+<h2 class="career-section__title type-section-title text-center font-semibold">Professional Journey</h2>
+<p class="career-section__intro mt-2 text-center">Key milestones and career progression over the years.</p>
 <div class="relative mx-auto mt-12 max-w-[856px]">
 <div class="timeline-line absolute left-[8px] top-2 h-[calc(100%-1rem)] w-[1px]">
 </div>
@@ -106,77 +103,57 @@
 <li class="relative pl-10">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Senior Product Experience Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">MoneySmart Group</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">Senior Product Experience Designer</h3>
+<p class="career-item__company">MoneySmart Group</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Mar 2019 - Mar 2026</span>
+<span class="career-item__date">Mar 2019 - Mar 2026</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Led redesigns of core comparison experiences across major financial-product verticals. Most notably, I drove the credit card listing revamp and launched a <a href="https://www.moneysmart.sg/credit-cards" target="_blank" rel="noopener noreferrer" class="text-[#706233] hover:underline">Side-by-Side Comparison</a> feature that increased conversion by 12% versus the previous experience. I also contributed to the in-house design system to improve consistency, reuse, and handoff quality across teams.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Fintech</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">UX</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Design Systems</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Led redesigns of core comparison experiences across major financial-product verticals. Most notably, I drove the credit card listing revamp and launched a <a href="https://www.moneysmart.sg/credit-cards" target="_blank" rel="noopener noreferrer" class="career-item__link">Side-by-Side Comparison</a> feature that increased conversion by 12% versus the previous experience. I also contributed to the in-house design system to improve consistency, reuse, and handoff quality across teams.</p>
 </article>
 </li>
 <li class="relative pl-10">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">UX/UI Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">FoodRazor</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">UX/UI Designer</h3>
+<p class="career-item__company">FoodRazor</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Apr 2018 - Dec 2018</span>
+<span class="career-item__date">Apr 2018 - Dec 2018</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Designed modular dashboard workflows for a pre-seed SaaS startup, improving usability for restaurant operations and supporting integrations such as inventory workflows and QuickBooks-related tasks.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">SaaS</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Dashboard</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Product Strategy</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Designed modular dashboard workflows for a pre-seed SaaS startup, improving usability for restaurant operations and supporting integrations such as inventory workflows and QuickBooks-related tasks.</p>
 </article>
 </li>
 <li class="relative pl-10">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">UX/UI Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">PigeonLab Pte Ltd</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">UX/UI Designer</h3>
+<p class="career-item__company">PigeonLab Pte Ltd</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Oct 2016 - Nov 2017</span>
+<span class="career-item__date">Oct 2016 - Nov 2017</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Generated actionable insights for Pigeonhole Live&#x27;s audience app and dashboard using session recordings and click maps.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Event Tech</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Usability Testing</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Data Analysis</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Generated actionable insights for Pigeonhole Live&#x27;s audience app and dashboard using session recordings and click maps.</p>
 </article>
 </li>
 <li class="relative pl-10">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Senior UX/UI Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">Poket Rewards</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">Senior UX/UI Designer</h3>
+<p class="career-item__company">Poket Rewards</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Nov 2015 - Apr 2016</span>
+<span class="career-item__date">Nov 2015 - Apr 2016</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Drove end-to-end mobile app redesign and conducted guerrilla user testing for a consumer loyalty app.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Mobile Design</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Loyalty</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">User Testing</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Drove end-to-end mobile app redesign and conducted guerrilla user testing for a consumer loyalty app.</p>
 </article>
 </li>
 </ol>
@@ -185,106 +162,58 @@
 <li class="timeline-extra__item relative pl-10" style="transition-delay:0ms">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">UX/UI Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">Asteroid</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">UX/UI Designer</h3>
+<p class="career-item__company">Asteroid</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Apr 2014 - Aug 2014</span>
+<span class="career-item__date">Apr 2014 - Aug 2014</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Partnered with co-founders to define and launch the MVP of an iBeacon-powered mobile app for hyperlocal notifications.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Innovation</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Customer Development</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Prototyping</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Partnered with co-founders to define and launch the MVP of an iBeacon-powered mobile app for hyperlocal notifications.</p>
 </article>
 </li>
 <li class="timeline-extra__item relative pl-10" style="transition-delay:0ms">
 <span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
 </span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Freelance Interactive Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">Multiple Agencies</p>
+<article class="career-item space-y-2.5">
+<div class="career-item__header flex flex-wrap items-start justify-between gap-2">
+<div class="career-item__header-main space-y-0.5">
+<h3 class="career-item__role">Interactive Designer</h3>
+<p class="career-item__company">Earlier Digital Design Experience</p>
 </div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Nov 2010 - Apr 2013</span>
+<span class="career-item__date">2013 - 2001</span>
 </div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Delivered interactive and marketing design projects for multiple agencies and cross-industry clients.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Interactive Design</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Campaigns</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Client Delivery</span>
-</div>
-</article>
-</li>
-<li class="timeline-extra__item relative pl-10" style="transition-delay:0ms">
-<span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
-</span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Web Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">Skema Connexions</p>
-</div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Aug 2007 - Apr 2009</span>
-</div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Designed responsive websites and interactive assets with analytics and SEO best-practice foundations.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Web Design</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Analytics</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">SEO</span>
-</div>
-</article>
-</li>
-<li class="timeline-extra__item relative pl-10" style="transition-delay:0ms">
-<span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
-</span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Web Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">ZenderFang Pte Ltd</p>
-</div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Nov 2005 - Apr 2006</span>
-</div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Designed and localized the Singapore Land Rover site and supporting microsites.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Localization</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Brand Sites</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Digital</span>
-</div>
-</article>
-</li>
-<li class="timeline-extra__item relative pl-10" style="transition-delay:0ms">
-<span class="absolute left-[3px] top-[11px] size-[10px] rounded-full border-2 border-[#b09743] bg-[#f7f6ef]">
-</span>
-<article class="space-y-2.5">
-<div class="flex flex-wrap items-start justify-between gap-2">
-<div class="space-y-0.5">
-<h3 class="text-[18px] font-medium leading-[1.2] text-[#2f3130]">Senior Web Designer</h3>
-<p class="text-[14px] font-semibold leading-[1.2] text-[#706233]">Fynch Consulting Pte Ltd</p>
-</div>
-<span class="rounded-full border border-[#d8d6cf] bg-[#fcfcfa] px-3 py-1 text-[12px] font-semibold text-[#6d6c65]">Apr 2001 - Oct 2005</span>
-</div>
-<p class="max-w-[780px] whitespace-pre-line text-[16px] leading-[1.4] text-[#6b6c67]">Delivered cohesive digital platforms for Volkswagen Singapore and regional Asia Pacific initiatives.</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Enterprise</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Platforms</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Brand UX</span>
-</div>
+<p class="career-item__body max-w-[786px] whitespace-pre-line">Worked across digital products, interaction design, and web experiences for brands including:
+Volkswagen Singapore &amp; APAC
+Land Rover Singapore
+Canon
+Sony
+Singapore Grand Prix</p>
 </article>
 </li>
 </ol>
 </div>
 <div class="mt-8 flex justify-center">
 <button type="button" aria-expanded="false" class="timeline-toggle">
-<span class="timeline-toggle__circle" aria-hidden="true">
-<span class="timeline-toggle__chevron ">
-</span>
-</span>
+<svg class="timeline-toggle__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 50 48" fill="none">
+<g filter="url(#timeline-toggle-shadow)">
+<rect x="4" width="42" height="42" rx="21" fill="white"/>
+<rect x="4.75" y="0.75" width="40.5" height="40.5" rx="20.25" stroke="#74672B" stroke-width="1.5"/>
+<path d="M18 18L25 25L32 18" stroke="#74672B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="timeline-toggle-shadow" x="0" y="-2" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>
 <span class="timeline-toggle__label">See more</span>
 </button>
 </div>
@@ -292,52 +221,79 @@
 </div>
 </section>
 <section id="skills" class="hero-gradient">
-<div data-parallax="true" data-parallax-speed="20" class="parallax-section section-shell grid gap-8 py-14 md:grid-cols-2 min-[1536px]:gap-[60px] min-[1536px]:py-[56px]">
-<div>
-<h2 class="type-section-title font-semibold text-[#32332f]">Expertise &amp; Skills</h2>
-<p class="type-body-lg mt-4 max-w-xl text-[#5f6058]">I focus on the intersection of human-centric design and data-driven decisions, built on years of experience across diverse product platforms.</p>
-<div class="mt-6 space-y-4">
-<div>
-<p class="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333333]">UX Research</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">User interviews</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Usability testing</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Journey mapping</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Task flow analysis</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">A/B testing</span>
+<div data-parallax="true" data-parallax-speed="20" class="home-skills-section parallax-section section-shell grid gap-8 py-14 min-[1536px]:gap-[60px] min-[1536px]:py-[56px]">
+<div class="home-skills">
+<div class="home-skills__heading">
+<h2 class="home-skills__title type-section-title font-semibold">Expertise &amp; Skills</h2>
+<p class="home-skills__intro">I focus on the intersection of human-centric design and data-driven decisions, built on years of experience across diverse product domains.</p>
+</div>
+<div class="home-skills__groups">
+<div class="home-skills__group">
+<p class="home-skills__group-title">UX &amp; RESEARCH</p>
+<div class="home-skills__chips">
+<span class="home-skills__chip">User interviews</span>
+<span class="home-skills__chip">Usability testing</span>
+<span class="home-skills__chip">Journey mapping</span>
+<span class="home-skills__chip">Task flow analysis</span>
+<span class="home-skills__chip">A/B testing</span>
 </div>
 </div>
-<div>
-<p class="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333333]">Design Execution</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Interaction design</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Clickable prototyping</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Design systems</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Responsive design</span>
+<div class="home-skills__group">
+<p class="home-skills__group-title">DESIGN EXECUTION</p>
+<div class="home-skills__chips">
+<span class="home-skills__chip">Interaction design</span>
+<span class="home-skills__chip">Clickable prototyping</span>
+<span class="home-skills__chip">Design system</span>
+<span class="home-skills__chip">Responsive design</span>
 </div>
 </div>
-<div>
-<p class="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333333]">Collaboration</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Product requirements inquiry</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Stakeholder interviews</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Cross-functional alignment</span>
+<div class="home-skills__group">
+<p class="home-skills__group-title">COLLABORATION</p>
+<div class="home-skills__chips">
+<span class="home-skills__chip">Product requirements inquiry</span>
+<span class="home-skills__chip">Stakeholder interviews</span>
+<span class="home-skills__chip">Cross-functional alignment</span>
 </div>
 </div>
-<div>
-<p class="mb-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#333333]">Tools</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Figma</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Figma Make</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">FigJam</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">ChatGPT</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Codex</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Holistics</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Maze</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Microsoft Clarity</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Notion</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">JIRA</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] border border-[#ddddd6] bg-[#fbfbf8] text-[#666860]">Whimsical</span>
+<div class="home-skills__group home-skills__group--tools">
+<p class="home-skills__group-title">TOOLS</p>
+<div class="home-skills__tools">
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon" style="color:transparent" src="./figma-assets/tool-figma.png"/>
+<span class="home-skills__tool-label">Figma</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon" style="color:transparent" src="./figma-assets/tool-chatgpt.png"/>
+<span class="home-skills__tool-label">ChatGPT</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon" style="color:transparent" src="./figma-assets/tool-codex.png"/>
+<span class="home-skills__tool-label">Codex</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="23" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon home-skills__tool-icon--holistics" style="color:transparent" src="./figma-assets/tool-holistics.png"/>
+<span class="home-skills__tool-label">Holistics</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon" style="color:transparent" src="./figma-assets/tool-jira.svg"/>
+<span class="home-skills__tool-label">JIRA</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="12" decoding="async" data-nimg="1" class="home-skills__tool-icon home-skills__tool-icon--maze" style="color:transparent" src="./figma-assets/tool-maze.png"/>
+<span class="home-skills__tool-label">Maze</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="22" decoding="async" data-nimg="1" class="home-skills__tool-icon home-skills__tool-icon--clarity" style="color:transparent" src="./figma-assets/tool-clarity.png"/>
+<span class="home-skills__tool-label">Microsoft Clarity</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="24" height="25" decoding="async" data-nimg="1" class="home-skills__tool-icon home-skills__tool-icon--notion" style="color:transparent" src="./figma-assets/tool-notion.png"/>
+<span class="home-skills__tool-label">Notion</span>
+</span>
+<span class="home-skills__tool">
+<img alt="" loading="lazy" width="34" height="24" decoding="async" data-nimg="1" class="home-skills__tool-icon home-skills__tool-icon--whimsical" style="color:transparent" src="./figma-assets/tool-whimsical.png"/>
+<span class="home-skills__tool-label">Whimsical</span>
+</span>
 </div>
 </div>
 </div>
@@ -352,7 +308,7 @@
 </div>
 <div class="skills-summary-card__content">
 <p class="type-skill-card-title">Problem Framing</p>
-<p class="type-skill-card-body">Turning ambiguous business and user problems into focused product opportunities, test plans, and decision-ready design directions</p>
+<p class="type-skill-card-body">Turning ambiguous business and user problems into focused product opportunities, hypotheses, and decision-ready design directions.</p>
 </div>
 </div>
 <div class="skills-summary-card__row skills-summary-card__row--divided">
@@ -405,96 +361,101 @@
 </div>
 </div>
 </section>
-<section id="projects" class="bg-[#f8f7f2] py-14 min-[1536px]:py-[56px]">
-<div data-parallax="true" data-parallax-speed="22" class="parallax-section section-shell">
-<div class="flex flex-wrap items-end justify-between gap-4">
-<div>
-<h2 class="type-section-title font-semibold text-[#31322d]">Selected Projects</h2>
-<p class="type-body-lg mt-2 text-[#666761]">Case studies highlighting my approach to solving UX problems through usability testing,<!-- --> <span class="whitespace-nowrap">product thinking, and design execution.</span>
-</p>
+<section id="projects" class="home-projects-section py-14 min-[1536px]:py-[56px]">
+<div data-parallax="true" data-parallax-speed="22" class="home-projects-layout parallax-section section-shell">
+<div class="home-projects-heading">
+<h2 class="home-projects__title">Case Study</h2>
+<p class="home-projects__intro">Case studies showing how I frame product problems, simplify user decision journeys, and turn research and constraints into measurable product improvements.</p>
 </div>
-</div>
-<div class="mt-8 grid gap-5 md:grid-cols-2 min-[1200px]:grid-cols-3">
-<article class="case-study-card overflow-hidden rounded-xl2 border border-[#dfe0df] bg-[#f9faf9] shadow-card">
-<div data-case-study-image="true" class="case-study-media relative h-[211px] overflow-hidden rounded-t-[14px] rounded-b-none">
-<img alt="Reimagining Credit Card Listing Page as an AI Chat Experience preview" loading="lazy" decoding="async" data-nimg="fill" class="case-study-image object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 100vw, 216px" srcSet="./figma-assets/CreditCard-AI-img.png 640w, ./figma-assets/CreditCard-AI-img.png 750w, ./figma-assets/CreditCard-AI-img.png 828w, ./figma-assets/CreditCard-AI-img.png 1080w, ./figma-assets/CreditCard-AI-img.png 1200w, ./figma-assets/CreditCard-AI-img.png 1920w, ./figma-assets/CreditCard-AI-img.png 2048w, ./figma-assets/CreditCard-AI-img.png 3840w" src="./figma-assets/CreditCard-AI-img.png"/>
-</div>
-<div class="p-[14px]">
-<h3 class="type-card-title mt-4 font-semibold text-[#2f312f]">Reimagining Credit Card Listing Page as an AI Chat Experience</h3>
-<p class="mt-2 text-[14px] leading-6 text-[#646660]">Reframed card discovery into an AI chat-led comparison flow to speed up decision making and reduce friction.</p>
-<div class="mt-4 flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">UX/UI</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">MVP</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">Decision-making</span>
-</div>
-<a href="./card-chat-case-study.html" class="mt-4 inline-flex text-[14px] font-semibold tracking-[0.06em] text-[#7a6a2d] hover:underline">VIEW CASE STUDY ↗</a>
-</div>
-</article>
-<article class="case-study-card overflow-hidden rounded-xl2 border border-[#dfe0df] bg-[#f9faf9] shadow-card">
-<div data-case-study-image="true" class="case-study-media relative h-[211px] overflow-hidden rounded-t-[14px] rounded-b-none">
+<div class="home-projects__grid">
+<article class="home-project-card case-study-card">
+<div data-case-study-image="true" class="home-project-card__media case-study-media relative overflow-hidden">
 <img alt="Credit Card Listing Revamp preview" loading="lazy" decoding="async" data-nimg="fill" class="case-study-image object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 100vw, 216px" srcSet="./figma-assets/Card-listing-revamp-img.png 640w, ./figma-assets/Card-listing-revamp-img.png 750w, ./figma-assets/Card-listing-revamp-img.png 828w, ./figma-assets/Card-listing-revamp-img.png 1080w, ./figma-assets/Card-listing-revamp-img.png 1200w, ./figma-assets/Card-listing-revamp-img.png 1920w, ./figma-assets/Card-listing-revamp-img.png 2048w, ./figma-assets/Card-listing-revamp-img.png 3840w" src="./figma-assets/Card-listing-revamp-img.png"/>
 </div>
-<div class="p-[14px]">
-<h3 class="type-card-title mt-4 font-semibold text-[#2f312f]">Credit Card Listing Revamp</h3>
-<p class="mt-2 text-[14px] leading-6 text-[#646660]">Designing for decision</p>
-<div class="mt-4 flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">UX/UI</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">A/B Test</span>
+<div class="home-project-card__details">
+<div class="home-project-card__text-group">
+<h3 class="home-project-card__title">Credit Card Listing Revamp</h3>
+<p class="home-project-card__body">Designing for decision</p>
+<div class="home-project-card__badges">
+<span class="home-project-card__badge">UX/UI</span>
+<span class="home-project-card__badge">A/B Test</span>
 </div>
-<a href="./credit-card-revamp.html" class="mt-4 inline-flex text-[14px] font-semibold tracking-[0.06em] text-[#7a6a2d] hover:underline">VIEW CASE STUDY ↗</a>
+</div>
+<a href="./credit-card-revamp.html" class="home-project-card__cta">VIEW CASE STUDY <span aria-hidden="true" class="home-project-card__cta-icon">↗</span></a>
 </div>
 </article>
-<article class="case-study-card overflow-hidden rounded-xl2 border border-[#dfe0df] bg-[#f9faf9] shadow-card">
-<div data-case-study-image="true" class="case-study-media relative h-[211px] overflow-hidden rounded-t-[14px] rounded-b-none">
+<article class="home-project-card case-study-card">
+<div data-case-study-image="true" class="home-project-card__media case-study-media relative overflow-hidden">
+<img alt="Reimagining Credit Card Listing Page as an AI Chat Experience preview" loading="lazy" decoding="async" data-nimg="fill" class="case-study-image object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 100vw, 216px" srcSet="./figma-assets/CreditCard-AI-img.png 640w, ./figma-assets/CreditCard-AI-img.png 750w, ./figma-assets/CreditCard-AI-img.png 828w, ./figma-assets/CreditCard-AI-img.png 1080w, ./figma-assets/CreditCard-AI-img.png 1200w, ./figma-assets/CreditCard-AI-img.png 1920w, ./figma-assets/CreditCard-AI-img.png 2048w, ./figma-assets/CreditCard-AI-img.png 3840w" src="./figma-assets/CreditCard-AI-img.png"/>
+</div>
+<div class="home-project-card__details">
+<div class="home-project-card__text-group">
+<h3 class="home-project-card__title">Reimagining Credit Card Listing Page as an AI Chat Experience</h3>
+<p class="home-project-card__body">From P.O.C. to MVP Pilot</p>
+<div class="home-project-card__badges">
+<span class="home-project-card__badge">AI</span>
+<span class="home-project-card__badge">MVP</span>
+<span class="home-project-card__badge">UX/UI</span>
+<span class="home-project-card__badge">Content modelling</span>
+</div>
+</div>
+<a href="./card-chat-case-study.html" class="home-project-card__cta">VIEW CASE STUDY <span aria-hidden="true" class="home-project-card__cta-icon">↗</span></a>
+</div>
+</article>
+<article class="home-project-card case-study-card">
+<div data-case-study-image="true" class="home-project-card__media case-study-media relative overflow-hidden">
 <img alt="Personal Loan Mobile User Testing preview" loading="lazy" decoding="async" data-nimg="fill" class="case-study-image object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 100vw, 216px" srcSet="./figma-assets/PersonalLoan-UT-img.png 640w, ./figma-assets/PersonalLoan-UT-img.png 750w, ./figma-assets/PersonalLoan-UT-img.png 828w, ./figma-assets/PersonalLoan-UT-img.png 1080w, ./figma-assets/PersonalLoan-UT-img.png 1200w, ./figma-assets/PersonalLoan-UT-img.png 1920w, ./figma-assets/PersonalLoan-UT-img.png 2048w, ./figma-assets/PersonalLoan-UT-img.png 3840w" src="./figma-assets/PersonalLoan-UT-img.png"/>
 </div>
-<div class="p-[14px]">
-<h3 class="type-card-title mt-4 font-semibold text-[#2f312f]">Personal Loan Mobile Usability Research</h3>
-<p class="mt-2 text-[14px] leading-6 text-[#646660]">Optimizing mobile user discovery and decision confidence through user testing and rapid iteration.</p>
-<div class="mt-4 flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">Mobile</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">Usability Testing</span>
+<div class="home-project-card__details">
+<div class="home-project-card__text-group">
+<h3 class="home-project-card__title">Personal Loan Mobile Usability Research</h3>
+<p class="home-project-card__body">Optimizing mobile loan discovery and decision confidence through user testing and iterative design.</p>
+<div class="home-project-card__badges">
+<span class="home-project-card__badge">Mobile</span>
+<span class="home-project-card__badge">Usability testing</span>
 </div>
-<a href="./mobile-usability-research.html" class="mt-4 inline-flex text-[14px] font-semibold tracking-[0.06em] text-[#7a6a2d] hover:underline">VIEW CASE STUDY ↗</a>
+</div>
+<a href="./mobile-usability-research.html" class="home-project-card__cta">VIEW CASE STUDY <span aria-hidden="true" class="home-project-card__cta-icon">↗</span></a>
 </div>
 </article>
-<article class="case-study-card overflow-hidden rounded-xl2 border border-[#dfe0df] bg-[#f9faf9] shadow-card">
-<div data-case-study-image="true" class="case-study-media relative h-[211px] overflow-hidden rounded-t-[14px] rounded-b-none">
+<article class="home-project-card case-study-card">
+<div data-case-study-image="true" class="home-project-card__media case-study-media relative overflow-hidden">
 <img alt="Past Projects preview" loading="lazy" decoding="async" data-nimg="fill" class="case-study-image object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 100vw, 216px" srcSet="./figma-assets/Past-Project-img.png 640w, ./figma-assets/Past-Project-img.png 750w, ./figma-assets/Past-Project-img.png 828w, ./figma-assets/Past-Project-img.png 1080w, ./figma-assets/Past-Project-img.png 1200w, ./figma-assets/Past-Project-img.png 1920w, ./figma-assets/Past-Project-img.png 2048w, ./figma-assets/Past-Project-img.png 3840w" src="./figma-assets/Past-Project-img.png"/>
 </div>
-<div class="p-[14px]">
-<h3 class="type-card-title mt-4 font-semibold text-[#2f312f]">Past Projects</h3>
-<p class="mt-2 text-[14px] leading-6 text-[#646660]">A showcase of previous works and web projects from my design archive.</p>
-<div class="mt-4 flex flex-wrap gap-2">
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">Dashboard Design</span>
-<span class="inline-flex rounded-full px-[10px] py-[3px] text-[11px] font-semibold uppercase tracking-[0.06em] bg-[#eef0ef] text-[#666860]">Brand Microsites</span>
+<div class="home-project-card__details">
+<div class="home-project-card__text-group">
+<h3 class="home-project-card__title">Past Projects</h3>
+<p class="home-project-card__body">End-to-end design for mobile and web products across multiple domains.</p>
+<div class="home-project-card__badges">
+<span class="home-project-card__badge">Dashboard design</span>
+<span class="home-project-card__badge">Brand microsites</span>
 </div>
-<a href="https://cosmicsurfer.org/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-[14px] font-semibold tracking-[0.06em] text-[#7a6a2d] hover:underline">VIEW PAST PROJECTS ↗</a>
+</div>
+<a href="https://cosmicsurfer.org/" target="_blank" rel="noopener noreferrer" class="home-project-card__cta">VIEW PAST PROJECTS <span aria-hidden="true" class="home-project-card__cta-icon">↗</span></a>
 </div>
 </article>
 </div>
 </div>
 </section>
-<section id="contact" class="bg-[#756728] py-14">
-<div data-parallax="true" data-parallax-speed="16" class="parallax-section section-shell flex flex-wrap items-center justify-between gap-6">
-<div>
-<h2 class="type-family-sans text-[17px] leading-6 text-[#f8f7ee]">Contact Me</h2>
-<p class="mt-2 max-w-xl text-[16px] text-[#ebe6d4]">I&#x27;m always open to discussing future work opportunities, collaborations, and building meaningful product experiences.</p>
+<section id="contact" class="home-footer-section">
+<div data-parallax="true" data-parallax-speed="16" class="home-footer parallax-section section-shell">
+<div class="home-footer__content">
+<div class="home-footer__copy">
+<h2 class="home-footer__title">Contact Me</h2>
+<p class="home-footer__body">I&#x27;m always open to discussing future work opportunities, collaborations, and building meaningful product experiences.</p>
 </div>
-<div class="flex gap-3">
-<a href="mailto:pixarboy@gmail.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-[10px] px-4 py-2 text-[14px] font-semibold leading-[1.2] transition border border-[#d8d6cc] bg-[#fdfdf9] text-[#3f3f38] hover:bg-[#f5f3ea] py-2 leading-[1.2]">Send an Email</a>
-<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-[10px] px-4 py-2 text-[14px] font-semibold leading-[1.2] transition border border-[#d8d6cc] bg-[#fdfdf9] text-[#3f3f38] hover:bg-[#f5f3ea] py-2 leading-[1.2]">
-<span class="inline-flex items-center gap-1 leading-[1.2]">
-<img alt="" loading="lazy" width="22" height="24" decoding="async" data-nimg="1" class="h-6 w-[22px]" style="color:transparent" srcSet="./figma-assets/Linkedin-Logo.png 1x, ./figma-assets/Linkedin-Logo.png 2x" src="./figma-assets/Linkedin-Logo.png"/>
+<div class="home-footer__actions">
+<a href="mailto:pixarboy@gmail.com" target="_blank" rel="noopener noreferrer" class="home-footer__button">Send an Email</a>
+<a href="https://www.linkedin.com/in/seetseahteai/" target="_blank" rel="noopener noreferrer" class="home-footer__button home-footer__button--linkedin">
+<span class="home-footer__button-inner">
+<img alt="" loading="lazy" width="22" height="24" decoding="async" data-nimg="1" class="home-footer__button-icon" style="color:transparent" srcSet="./figma-assets/Linkedin-Logo.png 1x, ./figma-assets/Linkedin-Logo.png 2x" src="./figma-assets/Linkedin-Logo.png"/>
 <span>LinkedIn Profile</span>
 </span>
 </a>
 </div>
 </div>
+</div>
 </section>
-<footer class="section-shell flex justify-end py-8">
-<a href="#top" class="rounded-full border border-[#d8d6cc] bg-[#fcfcf8] px-4 py-2 text-[12px] font-medium text-[#77776f]">Back to top</a>
-</footer>
 </main>
 <!--$-->
 <!--/$-->
@@ -602,7 +563,7 @@
 
     var btn = document.querySelector('button.timeline-toggle');
     var extra = document.querySelector('.timeline-extra');
-    var chevron = document.querySelector('.timeline-toggle__chevron');
+    var chevron = document.querySelector('.timeline-toggle__icon');
     var label = document.querySelector('.timeline-toggle__label');
     if(btn && extra && chevron && label){
       var expanded = false;
