@@ -881,6 +881,40 @@ body,
   flex: 0 0 22px;
 }
 
+.home-footer__back-to-top-shell {
+  background: #f6f6f0;
+}
+
+.home-footer__back-to-top-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.home-footer__back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 20px;
+  border-radius: var(--cs-radius-pill);
+  background: #ffffff;
+  color: #333333;
+  font-family: "Google Sans Flex", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+  transition: background-color var(--cs-transition-base);
+}
+
+.home-footer__back-to-top:hover {
+  background: #f5f3ea;
+}
+
 @media (min-width: 768px) {
   .home-hero-section,
   .career-section,
@@ -996,6 +1030,10 @@ body,
   .home-footer__button--linkedin {
     min-width: 0;
     width: auto;
+  }
+
+  .home-footer__back-to-top-row {
+    width: 100%;
   }
 
   .type-skill-card-title {
