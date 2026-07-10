@@ -26,6 +26,47 @@
       max-width: 100%;
       height: auto;
     }
+
+    .cs-home-back-to-top-shell {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .cs-home-back-to-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      border: 1px solid #d8d6cc;
+      border-radius: 999px;
+      background: #fcfcf8;
+      padding: 8px 16px;
+      color: #77776f;
+      font-family: "Google Sans Flex", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0;
+      text-decoration: none;
+      white-space: nowrap;
+      transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .cs-home-back-to-top:hover {
+      background: #f5f3ea;
+      color: #5f6058;
+    }
+
+    @media (max-width: 767px) {
+      .cs-home-back-to-top-shell {
+        justify-content: center;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -48,7 +89,7 @@
                 cross-channel UX, and delivered the side-by-side comparison feature from concept to launch.
               </p>
             </div>
-            <div class="mt-8 grid grid-cols-[150px_1px_177px] items-start gap-5">
+            <div class="mt-8 grid grid-cols-[minmax(0,150px)_1px_minmax(0,1fr)] items-start gap-4">
               <div class="flex min-h-10 flex-col items-start justify-start">
                 <p class="cs-h2 font-semibold text-[#74672b]">12%</p>
                 <p class="cs-footnote mt-1 max-w-[122px] text-[#333333]">UPLIFT IN CREDIT CARD CVR</p>
@@ -361,9 +402,9 @@ AI capabilities was not meaningfully integrated into user decision flows for a m
         </div>
       </section>
 
-      <div class="mx-auto mt-6 flex w-full max-w-[1216px] justify-end px-8 pt-6">
-        <a href="#top" class="cs-footnote rounded-full border border-[#e2e8f0] bg-white px-[14px] py-2 font-medium text-[#333333]">
-          Back to top
+      <div class="cs-home-back-to-top-shell mx-auto mt-6 w-full max-w-[1216px] px-8 pt-6">
+        <a href="#top" class="cs-home-back-to-top">
+          Back to top ↑
         </a>
       </div>
     </div>

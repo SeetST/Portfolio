@@ -684,15 +684,15 @@ body,
 }
 
 .home-project-card__cta-icon {
-  display: inline-block;
+  display: block;
   width: 14px;
   height: 14px;
-  object-fit: contain;
-  flex: 0 0 auto;
+  flex: 0 0 14px;
 }
 
 @media (min-width: 768px) {
   .home-projects__grid {
+    gap: 24px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -887,37 +887,39 @@ body,
 }
 
 .home-footer__back-to-top-shell {
-  background: #f6f6f0;
-}
-
-.home-footer__back-to-top-row {
   display: flex;
   justify-content: flex-end;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: #f8f7f2;
 }
 
 .home-footer__back-to-top {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: 8px 20px;
-  border-radius: var(--cs-radius-pill);
-  background: #ffffff;
-  color: #333333;
+  min-height: 40px;
+  border: 1px solid #d8d6cc;
+  border-radius: 999px;
+  background: #fcfcf8;
+  padding: 8px 16px;
+  color: #77776f;
   font-family: "Google Sans Flex", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 18px;
+  letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
-  transition: background-color var(--cs-transition-base);
+  transition:
+    background-color var(--cs-transition-base),
+    border-color var(--cs-transition-base),
+    color var(--cs-transition-base);
 }
 
 .home-footer__back-to-top:hover {
   background: #f5f3ea;
+  color: #5f6058;
 }
 
 @media (min-width: 768px) {
@@ -1028,17 +1030,22 @@ body,
   }
 
   .home-footer__actions {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
   }
 
   .home-footer__button:not(.home-footer__button--linkedin),
   .home-footer__button--linkedin {
+    flex: 0 1 auto;
     min-width: 0;
     width: auto;
   }
 
-  .home-footer__back-to-top-row {
-    width: 100%;
+  .home-footer__back-to-top-shell {
+    justify-content: center;
+    padding-top: 24px;
+    padding-bottom: 32px;
   }
 
   .type-skill-card-title {
@@ -1072,10 +1079,9 @@ body,
   }
 
   .career-item__header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    display: flex;
+    flex-direction: column;
     align-items: start;
-    column-gap: 12px;
     row-gap: 8px;
   }
 
@@ -1085,6 +1091,5 @@ body,
 
   .career-item__date {
     align-self: start;
-    justify-self: end;
   }
 }
