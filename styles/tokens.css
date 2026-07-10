@@ -592,20 +592,20 @@ body,
 
 .home-projects__grid {
   display: grid;
-  gap: 16px;
+  gap: 24px;
 }
 
 .home-project-card {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   overflow: hidden;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
   background: #ffffff;
   box-shadow: 0 10px 13px rgba(15, 23, 42, 0.05);
-  padding-bottom: 12px;
+  padding-bottom: 24px;
 }
 
 .home-project-card__media {
@@ -639,10 +639,12 @@ body,
 
 .home-project-card__body {
   margin: 0;
-  color: #333333;
-  font-size: 14px;
+  color: var(--color-secondary, #333);
+  font-family: var(--Caption-fontFamily, "Google Sans Flex 120pt");
+  font-size: var(--Caption-size, 14px);
+  font-style: normal;
   font-weight: 500;
-  line-height: 22px;
+  line-height: var(--Caption-lineHeight, 22px);
 }
 
 .home-project-card__badges {
@@ -656,7 +658,7 @@ body,
   align-items: center;
   min-height: 24.5px;
   border-radius: 999px;
-  background: #f1f0ea;
+  background: var(--color-primary-brown-100, #F1F0EA);
   padding: 4px 10px;
   color: #333333;
   font-size: 12px;
