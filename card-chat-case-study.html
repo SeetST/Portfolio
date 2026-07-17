@@ -1057,10 +1057,9 @@
   .interface-hero-frame img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 790px;
     max-width: 100%;
-    max-height: 791px;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     border-radius: 12px;
   }
@@ -1353,6 +1352,12 @@
     :root {
       --page-padding-x: 20px;
       --section-padding-y: 56px;
+    }
+
+    .interface-hero-frame img {
+      height: auto;
+      max-height: none;
+      object-fit: contain;
     }
 
     .overview-grid,
