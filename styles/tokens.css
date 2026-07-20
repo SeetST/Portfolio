@@ -944,6 +944,11 @@ body,
     height: auto;
     aspect-ratio: 675 / 422;
   }
+
+  .home-project-card__media--past-projects {
+    height: auto;
+    aspect-ratio: 686 / 422;
+  }
 }
 
 @media (max-width: 767px) {
