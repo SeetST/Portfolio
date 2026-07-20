@@ -937,6 +937,15 @@ body,
   }
 }
 
+@media (max-width: 1199px) {
+  .home-project-card__media--listing-revamp,
+  .home-project-card__media--ai-chat,
+  .home-project-card__media--personal-loan {
+    height: auto;
+    aspect-ratio: 675 / 422;
+  }
+}
+
 @media (max-width: 767px) {
   .home-projects-layout {
     gap: 24px;
