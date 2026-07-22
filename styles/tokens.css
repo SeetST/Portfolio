@@ -324,6 +324,23 @@ body,
   line-height: 26px;
 }
 
+.timeline-line {
+  --timeline-progress: 0;
+  left: 7px;
+  width: 2px;
+  overflow: hidden;
+  background: #e3e1d5;
+}
+
+.timeline-line::after {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: calc(var(--timeline-progress) * 1%);
+  content: "";
+  background: linear-gradient(180deg, #b09743 0%, #74672b 72%, #b09743 100%);
+}
+
 .career-item__role {
   color: #333333;
   font-family: "Google Sans Flex", sans-serif;
@@ -704,6 +721,10 @@ body,
   .home-project-card__cta--project-link:hover .home-project-card__cta-icon,
   .home-project-card__cta--project-link:focus-visible .home-project-card__cta-icon {
     transform: none;
+  }
+
+  .timeline-line::after {
+    display: none;
   }
 }
 
