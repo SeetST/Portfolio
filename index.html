@@ -564,6 +564,35 @@ Singapore Grand Prix</p>
       }
     }
 
+    var timeline = document.querySelector('.timeline-line');
+    var timelineProgressUpdate = function(){};
+    if(timeline && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+      var timelineFrameId = 0;
+      function updateTimelineProgress(){
+        var rect = timeline.getBoundingClientRect();
+        var start = window.innerHeight * 0.95;
+        var end = window.innerHeight * 0.35;
+        var progress = (start - rect.top) / (rect.height + start - end);
+        progress = Math.min(1, Math.max(0, progress));
+        timeline.style.setProperty('--timeline-progress', (progress * 100).toFixed(2));
+      }
+      function scheduleTimelineProgress(){
+        if(timelineFrameId) return;
+        timelineFrameId = window.requestAnimationFrame(function(){
+          timelineFrameId = 0;
+          updateTimelineProgress();
+        });
+      }
+
+      timelineProgressUpdate = scheduleTimelineProgress;
+      window.addEventListener('scroll', scheduleTimelineProgress, { passive: true });
+      window.addEventListener('resize', scheduleTimelineProgress);
+      if('ResizeObserver' in window){
+        new ResizeObserver(scheduleTimelineProgress).observe(timeline);
+      }
+      scheduleTimelineProgress();
+    }
+
     var btn = document.querySelector('button.timeline-toggle');
     var extra = document.querySelector('.timeline-extra');
     var chevron = document.querySelector('.timeline-toggle__icon');
@@ -595,7 +624,10 @@ Singapore Grand Prix</p>
             if(Math.abs(delta) > 0.5){
               window.scrollTo({ top: window.scrollY + delta, behavior: 'auto' });
             }
-            window.setTimeout(function(){ busy = false; }, prefersReduced ? 0 : 720);
+            window.setTimeout(function(){
+              busy = false;
+              timelineProgressUpdate();
+            }, prefersReduced ? 0 : 720);
           });
         });
       });
