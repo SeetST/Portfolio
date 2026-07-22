@@ -688,6 +688,23 @@ body,
   width: 14px;
   height: 14px;
   flex: 0 0 14px;
+  transition: transform var(--cs-transition-base);
+}
+
+.home-project-card__cta--project-link:hover .home-project-card__cta-icon,
+.home-project-card__cta--project-link:focus-visible .home-project-card__cta-icon {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-project-card__cta-icon {
+    transition: none;
+  }
+
+  .home-project-card__cta--project-link:hover .home-project-card__cta-icon,
+  .home-project-card__cta--project-link:focus-visible .home-project-card__cta-icon {
+    transform: none;
+  }
 }
 
 @media (min-width: 768px) {
