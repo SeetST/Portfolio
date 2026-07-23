@@ -500,7 +500,7 @@ body,
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--cs-space-32);
 }
 
 .home-skills__group {
@@ -531,9 +531,9 @@ body,
   background: #ffffff;
   padding: 5px 11px;
   color: #333333;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
   white-space: nowrap;
 }
 
@@ -558,9 +558,9 @@ body,
 
 .home-skills__tool-label {
   color: #475569;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
   white-space: nowrap;
 }
 
@@ -1057,7 +1057,7 @@ body,
 
   .home-skills__groups {
     margin-top: 24px;
-    gap: 24px;
+    gap: var(--cs-space-32);
   }
 
   .home-skills__tool {
