@@ -718,7 +718,7 @@ body,
   gap: 8px;
   margin-top: auto;
   color: #74672b;
-  font-size: 14px;
+  font-size: var(--Caption-size, 14px);
   font-weight: 500;
   line-height: 24px;
   text-decoration: none;
