@@ -474,6 +474,7 @@ Singapore Grand Prix</p>
     var heroSection = document.getElementById('top');
     var heroFrame = document.querySelector('.hero-photo-frame');
     var heroHalo = document.querySelector('.hero-photo-halo');
+    var heroActions = document.querySelector('.hero-actions');
     var heroImg = heroFrame ? heroFrame.querySelector('img') : null;
 
     function showHero(){
@@ -498,7 +499,15 @@ Singapore Grand Prix</p>
       });
     }
 
+    function retriggerHeroActions(){
+      if(!heroActions) return;
+      heroActions.classList.remove('is-revealed');
+      void heroActions.offsetWidth;
+      heroActions.classList.add('is-revealed');
+    }
+
     retriggerHeroText();
+    retriggerHeroActions();
     showHero();
     if(heroImg && !heroImg.complete){
       heroImg.addEventListener('load', showHero, { once: true });
@@ -516,11 +525,13 @@ Singapore Grand Prix</p>
                 requestAnimationFrame(function(){
                   showHero();
                   retriggerHeroText();
+                  retriggerHeroActions();
                 });
               });
             } else {
               showHero();
               retriggerHeroText();
+              retriggerHeroActions();
               heroSeen = true;
             }
           }
