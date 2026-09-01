@@ -100,6 +100,7 @@ class StaticSmokeTests(unittest.TestCase):
             "./card-chat-case-study.html",
             "./credit-card-revamp.html",
             "./mobile-usability-research.html",
+            "./rhythm-case-study.html",
         )
         parser = self.assert_local_assets_resolve(body)
 
@@ -107,6 +108,7 @@ class StaticSmokeTests(unittest.TestCase):
             "./card-chat-case-study.html",
             "./credit-card-revamp.html",
             "./mobile-usability-research.html",
+            "./rhythm-case-study.html",
         ):
             self.assertIn(href, parser.links)
             status, _, _ = self.fetch(href.removeprefix("."))
@@ -136,6 +138,14 @@ class StaticSmokeTests(unittest.TestCase):
             "./index.html#projects",
         )
         self.assertIn("Reducing drop-off by improving trust", body)
+
+    def test_rhythm_case_study_renders_expected_title_and_back_link(self):
+        self.assert_page_contains(
+            "/rhythm-case-study.html",
+            "Designing for Recovery",
+            "./index.html#projects",
+            "Open interactive prototype",
+        )
 
 
 if __name__ == "__main__":
