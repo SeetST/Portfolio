@@ -64,6 +64,7 @@ jobs:
             figma-assets \
             index.html \
             mobile-usability-research.html \
+            rhythm-case-study.html \
             styles \
             dist-pages/
           touch dist-pages/.nojekyll

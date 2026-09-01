@@ -1036,7 +1036,8 @@ body,
 @media (max-width: 1199px) {
   .home-project-card__media--listing-revamp,
   .home-project-card__media--ai-chat,
-  .home-project-card__media--personal-loan {
+  .home-project-card__media--personal-loan,
+  .home-project-card__media--rhythm {
     height: auto;
     aspect-ratio: 675 / 422;
   }
