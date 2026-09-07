@@ -5,9 +5,8 @@
 <meta charSet="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="preload" as="image" imageSrcSet="./figma-assets/Logo.png 1x, ./figma-assets/Logo.png 2x"/>
-<link rel="preload" as="image" imageSrcSet="./figma-assets/hero-portrait.png 640w, ./figma-assets/hero-portrait.png 750w, ./figma-assets/hero-portrait.png 828w, ./figma-assets/hero-portrait.png 1080w, ./figma-assets/hero-portrait.png 1200w, ./figma-assets/hero-portrait.png 1920w, ./figma-assets/hero-portrait.png 2048w, ./figma-assets/hero-portrait.png 3840w" imageSizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 640px"/>
 <link rel="stylesheet" href="./_next/static/css/eb56bbb2ee44e966.css" data-precedence="next"/>
-<link rel="stylesheet" href="./styles/tokens.css?v=20260907-skills-focus-panel"/>
+<link rel="stylesheet" href="./styles/tokens.css?v=20260907-hero-beam-edge"/>
 <link rel="preload" as="script" fetchPriority="low" href="./_next/static/chunks/webpack-59b7ab5d5e64ff3d.js"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
@@ -64,30 +63,53 @@
 </div>
 </header>
 <section id="top" class="hero-gradient">
-<div data-parallax="true" data-parallax-speed="14" class="home-hero-section parallax-section section-shell grid gap-10 pb-14 pt-10 md:grid-cols-2 md:gap-14 md:pt-14 min-[1536px]:gap-[60px] min-[1536px]:pt-[72px]">
-<div id="about" class="space-y-6">
+<div data-parallax="true" data-parallax-speed="14" class="home-hero-section parallax-section section-shell hero-layout">
 <div class="hero-badge inline-flex">Senior Product Designer | Fintech, SaaS</div>
-<h1 class="slice-reveal hero-title">
-<span class="slice-reveal__row">
-<span class="slice-reveal__text">
-<span class="hero-title__accent">Designing decision-centric experiences</span> that increase conversion and trust</span>
-</span>
-</h1>
-<p class="slice-reveal slice-reveal--body hero-body">
-<span class="slice-reveal__row">
-<span class="slice-reveal__text">Singapore-based Senior Product Designer with domain experience in fintech and SaaS. I design comparison journeys, dashboard workflows, experiments, and design system that help users make confident decisions and enable teams to ship impactful features.</span>
-</span>
-</p>
-<div class="hero-actions flex flex-wrap">
+<div class="hero-layout__content">
+<div id="about" class="hero-copy">
+<h1 class="hero-title"><span class="hero-title__accent">I design clearer decisions</span> that increase conversion and trust</h1>
+<p class="hero-body">Complex journeys, simplified through research, systems thinking and measurable outcomes.</p>
+<div class="hero-actions hero-actions--static flex flex-wrap">
 <a href="#projects" class="hero-cta hero-cta--primary inline-flex items-center justify-center">View Case Studies</a>
 <a href="#contact" class="hero-cta hero-cta--secondary inline-flex items-center justify-center">Contact Me</a>
 </div>
 </div>
-<div class="hero-photo-stage relative mx-auto w-full max-w-[432px] aspect-[1.44/1]">
-<div class="hero-photo-halo absolute left-[6.94%] top-[8%] w-[87.96%] aspect-[380/270] rounded-[26px] bg-[#d8d8d2] ">
+<div class="hero-decision-system" aria-label="User research, experiments, analytics, stakeholder input, and the design system combine into one confident decision" role="img">
+<ol class="hero-decision-system__sources">
+<li class="hero-decision-system__source"><span class="hero-decision-system__label">User<br/>Research</span><img alt="" aria-hidden="true" src="./figma-assets/hero-source-user-research.svg?v=20260907-circle-only-icons"/></li>
+<li class="hero-decision-system__source"><span class="hero-decision-system__label">A/B<br/>Experiments</span><img alt="" aria-hidden="true" src="./figma-assets/hero-source-ab-experiments.svg?v=20260907-circle-only-icons"/></li>
+<li class="hero-decision-system__source hero-decision-system__source--primary"><span class="hero-decision-system__label">Analytics<br/><strong>PRIMARY</strong></span><img alt="" aria-hidden="true" src="./figma-assets/hero-source-analytics.svg?v=20260907-circle-only-icons"/></li>
+<li class="hero-decision-system__source"><span class="hero-decision-system__label">Stakeholders</span><img alt="" aria-hidden="true" src="./figma-assets/hero-source-stakeholders.svg?v=20260907-circle-only-icons"/></li>
+<li class="hero-decision-system__source"><span class="hero-decision-system__label">Design<br/>System</span><img alt="" aria-hidden="true" src="./figma-assets/hero-source-design-system.svg?v=20260907-circle-only-icons"/></li>
+</ol>
+<div class="hero-decision-system__connectors" aria-hidden="true">
+<svg class="hero-decision-system__feeders" viewBox="0 0 186 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="186" height="395" fill="none"/>
+<rect width="2406" height="3854" transform="translate(-1362.77 -177.75)" fill="none"/>
+<path class="hero-feeder-path hero-feeder-path--research" d="M1.38513 1.25C92.6699 1.25 92.6699 192.998 183.955 192.998" stroke="#ACA480" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 9"/>
+<path class="hero-feeder-path hero-feeder-path--experiments" d="M1.38513 97.1237C92.6699 97.1237 92.6699 192.998 183.955 192.998" stroke="#ACA480" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 9"/>
+<path class="hero-feeder-path hero-feeder-path--stakeholders" d="M1.25 295.25C92.67 295.25 92.67 197.25 184.09 197.25" stroke="#ACA480" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 9"/>
+<path class="hero-feeder-path hero-feeder-path--system" d="M1.25 393.25C92.67 393.25 92.67 197.25 184.09 197.25" stroke="#ACA480" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 9"/>
+<defs><linearGradient id="hero-feeders-gradient" x1="0" y1="1927" x2="2406" y2="1927" gradientUnits="userSpaceOnUse"><stop stop-color="#F8F8F0"/><stop offset="1" stop-color="#E3E3DE"/></linearGradient></defs>
+</svg>
+<img class="hero-decision-system__signal" src="./figma-assets/hero-primary-signal.svg?v=20260907-signal-edge-joined"/>
+<span class="hero-decision-system__beam"></span>
 </div>
-<div class="hero-photo-frame absolute right-0 top-0 w-[90.05%] aspect-[389/281] overflow-hidden rounded-[26px] " style="width:90%;box-shadow:none">
-<img alt="Portfolio hero visual" decoding="async" data-nimg="fill" class="object-cover object-[50%_36%]" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 520px, 640px" srcSet="./figma-assets/hero-portrait.png 640w, ./figma-assets/hero-portrait.png 750w, ./figma-assets/hero-portrait.png 828w, ./figma-assets/hero-portrait.png 1080w, ./figma-assets/hero-portrait.png 1200w, ./figma-assets/hero-portrait.png 1920w, ./figma-assets/hero-portrait.png 2048w, ./figma-assets/hero-portrait.png 3840w" src="./figma-assets/hero-portrait.png"/>
+<div class="hero-decision-system__outcome" aria-hidden="true">
+<img class="hero-decision-system__ring" alt="" src="./figma-assets/hero-decision-ring.svg?v=20260907-figma-outline-motion-v2"/>
+<svg class="hero-decision-system__ring-inner-arc" preserveAspectRatio="none" overflow="visible" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+<g class="hero-decision-system__inner-arc">
+<path id="Arc - inner accent (Stroke)" d="M80.0784 29.3249C90.633 30.2464 100.564 34.7182 108.25 42.0104C115.936 49.3026 120.923 58.9848 122.398 69.4763L119.922 69.8239C118.526 59.8923 113.805 50.7269 106.53 43.8239C99.2538 36.9209 89.8529 32.6875 79.8616 31.8151L80.0784 29.3249Z" fill="#74672B"/>
+<path id="Arc - inner accent dot" d="M121.16 72.4C122.679 72.4 123.91 71.1688 123.91 69.65C123.91 68.1312 122.679 66.9 121.16 66.9C119.641 66.9 118.41 68.1312 118.41 69.65C118.41 71.1688 119.641 72.4 121.16 72.4Z" fill="#8A7428"/>
+<path id="Arc - inner accent dot (Stroke)" d="M122.91 69.65C122.91 68.6835 122.126 67.9 121.16 67.9C120.193 67.9 119.41 68.6835 119.41 69.65C119.41 70.6165 120.193 71.4 121.16 71.4V72.4C119.641 72.4 118.41 71.1688 118.41 69.65C118.41 68.1312 119.641 66.9 121.16 66.9C122.679 66.9 123.91 68.1312 123.91 69.65C123.91 71.1688 122.679 72.4 121.16 72.4V71.4C122.126 71.4 122.91 70.6165 122.91 69.65Z" fill="#74672B"/>
+</g>
+</svg>
+<div class="hero-decision-system__caption"><span></span><p>ONE CONFIDENT<br/>DECISION</p></div>
+</div>
+</div>
+<div class="hero-actions hero-actions--mobile flex flex-wrap">
+<a href="#projects" class="hero-cta hero-cta--primary inline-flex items-center justify-center">View Case Studies</a>
+<a href="#contact" class="hero-cta hero-cta--secondary inline-flex items-center justify-center">Contact Me</a>
 </div>
 </div>
 </div>
@@ -529,75 +551,6 @@ Singapore Grand Prix</p>
   }
 
   ready(function(){
-    var heroSection = document.getElementById('top');
-    var heroFrame = document.querySelector('.hero-photo-frame');
-    var heroHalo = document.querySelector('.hero-photo-halo');
-    var heroActions = document.querySelector('.hero-actions');
-    var heroImg = heroFrame ? heroFrame.querySelector('img') : null;
-
-    function showHero(){
-      if(heroFrame) heroFrame.classList.add('is-loaded');
-      if(heroHalo) heroHalo.classList.add('is-loaded');
-    }
-
-    function hideHero(){
-      if(heroFrame) heroFrame.classList.remove('is-loaded');
-      if(heroHalo) heroHalo.classList.remove('is-loaded');
-    }
-
-    function retriggerHeroText(){
-      var texts = document.querySelectorAll('#about .slice-reveal__text');
-      texts.forEach(function(node){
-        node.style.animation = 'none';
-      });
-      // force reflow so browser restarts keyframes
-      void document.body.offsetHeight;
-      texts.forEach(function(node){
-        node.style.animation = '';
-      });
-    }
-
-    function retriggerHeroActions(){
-      if(!heroActions) return;
-      heroActions.classList.remove('is-revealed');
-      void heroActions.offsetWidth;
-      heroActions.classList.add('is-revealed');
-    }
-
-    retriggerHeroText();
-    retriggerHeroActions();
-    showHero();
-    if(heroImg && !heroImg.complete){
-      heroImg.addEventListener('load', showHero, { once: true });
-      heroImg.addEventListener('error', showHero, { once: true });
-    }
-
-    if(heroSection && 'IntersectionObserver' in window){
-      var heroSeen = false;
-      var heroObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting && entry.intersectionRatio > 0.28){
-            if(heroSeen){
-              hideHero();
-              requestAnimationFrame(function(){
-                requestAnimationFrame(function(){
-                  showHero();
-                  retriggerHeroText();
-                  retriggerHeroActions();
-                });
-              });
-            } else {
-              showHero();
-              retriggerHeroText();
-              retriggerHeroActions();
-              heroSeen = true;
-            }
-          }
-        });
-      }, { threshold: [0.28, 0.5], rootMargin: '-8% 0px -12% 0px' });
-      heroObserver.observe(heroSection);
-    }
-
     // Subtle per-section scroll transition (parallax/reveal style)
     var sections = Array.prototype.slice.call(document.querySelectorAll('[data-parallax="true"]'));
     function applySectionState(el, visible, ratio){

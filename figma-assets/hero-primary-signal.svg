@@ -1,0 +1,29 @@
+<svg width="212" height="24" viewBox="-8 0 212 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="204" height="24" fill="none"/>
+<g id="Portfolio Homepage Update">
+<g id="App">
+<rect width="2406" height="3854" transform="translate(-1364 -363)" fill="none"/>
+<g id="Section">
+<g id="hero-content">
+<g id="source connectors">
+<g id="Connectors ">
+<g id="Port">
+<path id="arrow-line" d="M203.667 11.6377L190.016 21.7764V14.1836L-8 15.25V9.75L190.016 8.68359V1.5L203.667 11.6377Z" fill="#74672B"/>
+<g id="circle-dot">
+<path id="Port ring" d="M173.016 21.7062C178.538 21.7062 183.016 17.1829 183.016 11.6031C183.016 6.02331 178.538 1.5 173.016 1.5C167.493 1.5 163.016 6.02331 163.016 11.6031C163.016 17.1829 167.493 21.7062 173.016 21.7062Z" fill="white" stroke="#74672B" stroke-width="3"/>
+<path id="Port core" d="M173.016 14.634C174.672 14.634 176.016 13.277 176.016 11.6031C176.016 9.92913 174.672 8.57214 173.016 8.57214C171.359 8.57214 170.016 9.92913 170.016 11.6031C170.016 13.277 171.359 14.634 173.016 14.634Z" fill="#74672B"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_27_842" x1="0" y1="1927" x2="2406" y2="1927" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F8F8F0"/>
+<stop offset="1" stop-color="#E3E3DE"/>
+</linearGradient>
+</defs>
+</svg>

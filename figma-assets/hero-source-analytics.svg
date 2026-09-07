@@ -1,0 +1,46 @@
+<svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="71" height="71" fill="none"/>
+<g id="Portfolio Homepage Update">
+<g id="App">
+<rect width="2406" height="3854" transform="translate(-1299.5 -342.5)" fill="none"/>
+<g id="Section">
+<g id="hero-content">
+<g id="source connectors">
+<g id="Sources">
+<g id="Source &#194;&#183; Analytics">
+<g id="icon">
+<g id="Plate &#194;&#183; analytics" filter="url(#filter0_d_27_842)">
+<path d="M35.5 61.5C51.5163 61.5 64.5 48.5163 64.5 32.5C64.5 16.4837 51.5163 3.5 35.5 3.5C19.4837 3.5 6.5 16.4837 6.5 32.5C6.5 48.5163 19.4837 61.5 35.5 61.5Z" fill="#74672B"/>
+</g>
+<g id="Group">
+<g id="Bars">
+<path id="Vector" d="M26.3064 27.6452H24.5645C23.3886 27.6452 22.4354 28.5984 22.4354 29.7742V38.0968C22.4354 39.2726 23.3886 40.2258 24.5645 40.2258H26.3064C27.4822 40.2258 28.4354 39.2726 28.4354 38.0968V29.7742C28.4354 28.5984 27.4822 27.6452 26.3064 27.6452Z" fill="#F1F0EA"/>
+<path id="Vector_2" d="M36.371 21.8387H34.629C33.4532 21.8387 32.5 22.7919 32.5 23.9677V38.0968C32.5 39.2726 33.4532 40.2258 34.629 40.2258H36.371C37.5468 40.2258 38.5 39.2726 38.5 38.0968V23.9677C38.5 22.7919 37.5468 21.8387 36.371 21.8387Z" fill="#F1F0EA"/>
+<path id="Vector_3" d="M46.4354 17H44.6935C43.5177 17 42.5645 17.9532 42.5645 19.129V38.0968C42.5645 39.2726 43.5177 40.2258 44.6935 40.2258H46.4354C47.6113 40.2258 48.5645 39.2726 48.5645 38.0968V19.129C48.5645 17.9532 47.6113 17 46.4354 17Z" fill="#F1F0EA"/>
+</g>
+<path id="Baseline (Stroke)" opacity="0.62" d="M50.5 42.3326C51.2069 42.3326 51.7803 42.906 51.7803 43.6129C51.7803 44.3198 51.2069 44.8932 50.5 44.8932H20.5C19.7931 44.8932 19.2197 44.3198 19.2197 43.6129C19.2197 42.906 19.7931 42.3326 20.5 42.3326H50.5Z" fill="#F1F0EA"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_27_842" x="0" y="0" width="71" height="71" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3"/>
+<feGaussianBlur stdDeviation="3.25"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.416 0 0 0 0 0.384 0 0 0 0 0.141 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_27_842"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_27_842" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_27_842" x1="0" y1="1927" x2="2406" y2="1927" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F8F8F0"/>
+<stop offset="1" stop-color="#E3E3DE"/>
+</linearGradient>
+</defs>
+</svg>
