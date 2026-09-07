@@ -100,23 +100,28 @@ body,
 .type-skill-card-title {
   margin: 0;
   color: #333333;
-  font-family: var(--font-manrope);
+  font-family: "Google Sans Flex", sans-serif;
   font-size: var(--type-skill-title-size);
   font-weight: 600;
-  line-height: var(--type-skill-title-line);
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
 .type-skill-card-body {
   margin: 6px 0 0;
-  color: #333333;
+  color: #4b431c;
+  font-family: "Google Sans Flex", sans-serif;
   font-size: var(--type-skill-body-size);
+  font-weight: 500;
   line-height: var(--type-skill-body-line);
   overflow-wrap: anywhere;
 }
 
 .type-skill-card-body--compact {
   margin-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .home-header {
@@ -805,17 +810,15 @@ body,
   max-width: 501px;
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid #e3e3de;
+  border: 1px solid #aca480;
   border-radius: 18px;
-  background: #ffffff;
   padding: 24px;
-  box-shadow: 0 16px 20px rgba(15, 23, 42, 0.08);
 }
 
 .skills-summary-card__list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .skills-summary-card__row {
@@ -825,12 +828,12 @@ body,
 }
 
 .skills-summary-card__row--divided {
-  border-bottom: 1px solid #e3e3de;
-  padding-bottom: 17px;
+  border-bottom: 1px solid #cecab5;
+  padding-bottom: 24px;
 }
 
 .skills-summary-card__row--compact {
-  padding-bottom: 5px;
+  padding-bottom: 0;
 }
 
 .skills-summary-card__icon-shell {
@@ -851,6 +854,7 @@ body,
   justify-content: center;
   border-radius: 14px;
   background: #f8f8f0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .skills-summary-card__icon-wrap--small {
@@ -879,6 +883,20 @@ body,
   border-radius: 14px;
   background: #e1c78f;
   padding: 16px;
+}
+
+/* Keep the Skills narrative and summary legible as full-width tablet blocks. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-skills-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-skills,
+  .home-skills__intro,
+  .skills-summary-card {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .home-footer-section {
@@ -1104,25 +1122,6 @@ body,
   .skills-summary-card {
     width: 100%;
     max-width: 100%;
-    padding: 20px;
-  }
-
-  .skills-summary-card__row {
-    gap: 12px;
-  }
-
-  .skills-summary-card__icon-shell {
-    flex-basis: 44px;
-  }
-
-  .skills-summary-card__icon-wrap {
-    height: 44px;
-    width: 44px;
-  }
-
-  .skills-summary-card__icon {
-    height: 22px;
-    width: 22px;
   }
 
   .home-footer {
@@ -1158,11 +1157,6 @@ body,
     justify-content: center;
     padding-top: 24px;
     padding-bottom: 32px;
-  }
-
-  .type-skill-card-title {
-    font-size: 1.125rem;
-    line-height: 1.45;
   }
 
   .home-header {
