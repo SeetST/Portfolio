@@ -378,23 +378,23 @@
   }
 
   .hero-decision-system__feeders {
-    width: 129px;
+    width: 126px;
     height: 281px;
   }
 
   .hero-decision-system__signal {
-    left: -5px;
+    left: -4px;
     top: 133px;
-    width: 129px;
+    width: 133px;
     height: 14px;
   }
 
   .hero-decision-system__beam {
-    --hero-beam-start: -17px;
-    --hero-beam-travel-end: 112px;
+    --hero-beam-start: 0;
+    --hero-beam-travel-end: 99px;
     --hero-beam-end: 133px;
     top: 138px;
-    left: -5px;
+    left: -4px;
     width: 34px;
     height: 3px;
   }
@@ -1372,9 +1372,7 @@ body,
 .home-footer__title {
   margin: 0;
   color: #f7f5e9;
-  font-size: 24px;
   font-weight: 600;
-  line-height: 32px;
 }
 
 .home-footer__body {
