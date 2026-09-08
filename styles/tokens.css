@@ -758,7 +758,7 @@ body,
   align-items: center;
   min-height: 22px;
   border: 1px solid #e3e3de;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #ffffff;
   padding: 0 10px;
   color: #333333;
@@ -821,6 +821,76 @@ body,
 
 .timeline-toggle__icon.is-up {
   transform: rotate(180deg);
+}
+
+/* Homepage Professional Journey desktop/tablet Figma alignment. */
+@media (min-width: 768px) {
+  .career-timeline {
+    max-width: none;
+    margin-top: 24px;
+  }
+
+  .career-timeline > ol > li,
+  .career-timeline .timeline-extra__item {
+    padding-bottom: 12px;
+    padding-left: 44px;
+  }
+
+  .career-timeline > ol > li + li,
+  .career-timeline .timeline-extra__item + .timeline-extra__item {
+    margin-top: 16px;
+  }
+
+  .career-timeline .timeline-extra > ol {
+    padding-top: 16px;
+  }
+
+  .career-timeline .timeline-line {
+    left: 13px;
+  }
+
+  .career-timeline > ol > li > span,
+  .career-timeline .timeline-extra__item > span {
+    left: 8px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-width: 3px;
+    border-color: #706233;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+
+  .career-timeline .career-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .career-timeline .career-item > * + *,
+  .career-timeline .career-item__header-main > * + * {
+    margin-top: 0;
+  }
+
+  .career-timeline .career-item__date {
+    min-height: 40px;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .career-timeline .career-item__body {
+    max-width: 777px;
+  }
+
+  .career-timeline__toggle {
+    margin-top: 16px;
+  }
+
+  .career-timeline__toggle .timeline-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .home-skills {
